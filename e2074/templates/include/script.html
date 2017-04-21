@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<script>
+      // Handle the nav toggle button click event.
+      var $navToggleButton = document.getElementById("nav-toggle-button");
+      $navToggleButton.addEventListener("click", function () {
+        document.getElementsByClassName("nav-list")[0].classList.toggle("nav-revealed");
+      });
+      // Trigger point at which to perform dynamic effects on the nav bar
+      var triggerPoint = 60;
+      var $navPrimary = document.getElementById("nav-primary");
+      // On the front page, nav bar should be transparent before scrolling.
+      if (document.body.classList.contains("front")) {
+        // Initially set the nav to transparent.
+        $navPrimary.classList.add("nav-transparent");
+        // Remove transparency when scrolling down.
+        window.addEventListener("scroll", function () {
+          if (window.pageYOffset > triggerPoint) {
+            $navPrimary.classList.remove("nav-transparent");
+          } else {
+            $navPrimary.classList.add("nav-transparent");
+          }
+        });
+      }
+      // Shrink the nav bar upon page scroll.
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > triggerPoint) {
+          $navPrimary.classList.add("scrolled");
+        } else {
+          $navPrimary.classList.remove("scrolled");
+        }
+      });
+    </script>

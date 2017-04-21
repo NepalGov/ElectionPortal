@@ -1,0 +1,6 @@
+{% load static %}
+
+              <form method="post" enctype="multipart/form-data">{% csrf_token %}  {{form.as_p}}
+                <input type="submit" value="Login">
+              </form><br/>New Member?<br/>
+              <a href ="{% url 'signup' %}"><button >Register</button></a>

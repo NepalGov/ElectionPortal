@@ -16,6 +16,21 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from e2074.views import profile,home,signup,wpadmin,wpzone,wpdistrict,wpvdc,wpmunicipality
+from django.contrib.auth.views import login,logout
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^candidate/(?P<slug>[\w-]+)/$',profile, name='profile'),
+    url(r'^$', home, name='home'),
+    url(r'^wp-admin/login/$', login, name='login'),
+    url(r'^accounts/login/$', login, name='login'),
+    url(r'^wp-admin/logout/$', logout, {'next_page':'home'}, name='logout'),
+    url(r'^wp-admin/signup/$', signup, name='signup'),
+    url(r'^wp-admin/$', wpadmin, name='wpadmin'),
+    url(r'^wp-admin/zone/$', wpzone, name='wpzone'),
+    url(r'^wp-admin/district/$', wpdistrict, name='wpdistrict'),
+    url(r'^wp-admin/vdc/$', wpvdc, name='wpvdc'),
+    url(r'^wp-admin/municipality/$', wpmunicipality, name='wpmunicipality'),
+
 ]

@@ -1,0 +1,159 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/head.html' %}
+  <body>
+
+    {% include 'include/navbar.html' %}
+<header id="front-hero">
+  <div class="election-grid">
+    <div class="election-width-two-thirds">
+      <h1>Welcome to {{ title }}</h1>
+      <p class="election-font-lead">The best place to browse for everything Election 2074, Nepal.
+        <br />
+        <b>Simple, authentic, faster</b>
+      </p>
+      <form class="election-search election-search-big">
+        <div role="search">
+          <label class="election-sr-only" for="search-field-big">Search {{ title }}</label>
+          <input id="search-field-big" type="search" name="search" placeholder="Search Election Portal">
+          <button type="submit">
+            <span class="election-search-submit-text">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="popular election-width-one-third">
+      <h2>Popular on Election Portal</h2>
+      <ul class="election-unstyled-list">
+        <li><a href="/namesearch/">Check your name on voter's list</a>
+        </li>
+        <li><a href="/cast-vote/">How to cast vote?</a>
+        </li>
+        <li><a href="/parties/">Political Parties in Nepal</a>
+        </li>
+        <li><a href="/featured/">Featured Candidates</a>
+        </li>
+        <li><a href="/election-schedule/">Election Schedule</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="election-grid">
+  {% for blogs in blogs %}
+  {% if blogs.home == '1' %}
+  <div class="election-width-one-third">
+    <ol class="election-unstyled-list">
+      <li>
+        <h3><a href="/browse/benefits">{{ blogs.title }}</a></h3>
+        <p class="list">{{ blogs.content | truncatechars:60 }}</p>
+      </li>
+    </ol>
+  </div>
+  {% endif %}
+  {% if blogs.home == '2' %}
+  <div class="election-width-one-third">
+    <ol class="election-unstyled-list">
+      <li>
+        <h3><a href="/browse/benefits">{{ blogs.title }}</a></h3>
+        <p class="list">{{ blogs.content | truncatechars:60 }}</p>
+      </li>
+    </ol>
+  </div>
+  {% endif %}
+  {% if blogs.home == '3' %}
+  <div class="election-width-one-third">
+    <ol class="election-unstyled-list">
+      <li>
+        <h3><a href="/browse/benefits">{{ blogs.title }}</a></h3>
+        <p class="list">{{ blogs.content | truncatechars:60 }}</p>
+      </li>
+    </ol>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div><br /><br />
+
+<div class="election-grid">
+  <div class="borderline">
+  <div class="election-width-one-third">
+  <div class="large-numbers">
+    <ol>
+      <li><a href="/government/organisations"><strong>7,069,714</strong> Men Voters</a></li>
+      <li><a href="/government/organisations"><strong>6,984,625</strong> Women Voters</a></li>
+      <li><a href="/government/organisations"><strong>143</strong> Third Gender Voters</a></li>
+      <li><a href="/government/organisations"><strong>28</strong> Political Parties with Election Sign</a></li>
+    </ol>
+  </div>
+</div>
+<div class="election-width-two-thirds">
+<p class="election-font-lead intro">The Election Commission, Nepal (ECN) has finalized the voter list for the Local Level Election.</p>
+<p class="election-font-lead">According to the final voter list released on 2 March 2017, the total number of voters are 14,054,482. Among them are 7,069,714 men; 6,984,625 women; and 143 third gender. The ECN will publicize the voter list through its own website following the completion of redetermination of polling centers throughout the country.</p>
+<p class="election-font-lead">There would be no further transfers further registration/transfer of voters after the election date has been announced, based on the provisions of the Electoral Rolls Act, 2017.</p>
+</div>
+  </div>
+</div><br />
+
+<div class="election-grid">
+  <div class="borderline">
+  <div class="election-width-one-third">
+    <h1>More on Election Portal</h1>
+  </div>
+  <div class="election-width-one-third">
+    <h3>Most active</h3>
+    <ul class="election-unstyled-list">
+      <li><a href="/namesearch/">Become a volunteer</a>
+      </li>
+      <li><a href="/cast-vote/">How to cast vote?</a>
+      </li>
+      <li><a href="/parties/">Political Parties in Nepal</a>
+      </li>
+      <li><a href="/featured/">Featured Candidates</a>
+      </li>
+      <li><a href="/election-schedule/">Sample Ballot Papers</a>
+      </li>
+      <li><a href="/election-schedule/">Registering a Political Party</a>
+      </li>
+      <li><a href="/election-schedule/">Financial Disclosure of Parties</a>
+      </li>
+      <li><a href="/election-schedule/">Code of Conduct</a>
+      </li>
+    </ul>
+  </div></div>
+  <div class="election-width-one-third">
+    <div class="election-hero-callout election-section-dark">
+      <h2 style="text-align:center;"><span class="election-hero-callout-alt">38 Days</span> Until the Local Level Election</h2>
+      <a class="election-hero-link" href="#">Here's everything we know</a>
+    </div>
+  </div>
+</div><br /><br />
+
+<div class="election-grid">
+  <div class="election-accordion-bordered">
+    <ul class="thdc-unstyled-list">
+      <li>
+        <button class="election-button-unstyled" aria-expanded="false" aria-controls="wrong-form">
+          Is anything wrong with this page?
+        </button>
+        <div id="wrong-form" class="election-accordion-content">
+          <div class="election-width-two-thirds improve">
+            <h2>Help us improve Election Portal</h2>
+            <p class="election-font-lead">Don’t include personal or financial information like your National Identity number or credit card details.</p>
+            <form method="post" class="election-form-large">
+              {% csrf_token %}
+              {{form.as_p}}
+              <input type="submit" class="election-button-big" id="submit" name="submit" value="Submit" title="Submit" />
+            </form>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+	{% include 'include/footer.html' %}
+	{% include 'include/script.html' %}
+  </body>
+</html>
+<br />
+{% include 'include/extended_footer.html' %}
