@@ -1,0 +1,6 @@
+electionenv/
+/election.sock
+election/settings.py
+/election/settings.py
+*.pyc
+/db.sqlite3
