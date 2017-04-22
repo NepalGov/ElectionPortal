@@ -30,6 +30,7 @@
             <h3>Lastest Added</h3>
             {% for items in items %}
             <li>
+              {{ items.title }}
               {{ items.name }} - {{ items.district }} - {{ items.zone }}
             </li>
             {% endfor %}
