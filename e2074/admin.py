@@ -12,7 +12,7 @@ class PartyAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug":("name",)}
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title']
+    list_display = ['id', 'title','auther','home']
     prepopulated_fields = {'slug':('title',)}
 
 class FeedbackAdmin(admin.ModelAdmin):
