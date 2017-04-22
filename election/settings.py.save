@@ -1,6 +1,3 @@
-# Use This as settings.py For Local repo.
-
-
 """
 Django settings for election project.
 
@@ -40,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'e2074',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #custom middlewares
+    'e2074.custom_middleware.CheckUser',
 ]
 
 ROOT_URLCONF = 'election.urls'
@@ -122,3 +122,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
