@@ -2,11 +2,11 @@ from django.shortcuts import render,get_object_or_404, redirect
 
 # Create your views here.
 
-from .models import Candidate,Post,Feedback,Zone,District,Vdc,Municipality
+from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv
 from .forms import FeedbackForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from .forms import FeedbackForm, WpZoneForm, WpDistrictForm, WpVdcForm, WpMunicipalityForm
+from .forms import FeedbackForm, WpZoneForm, WpDistrictForm, WpPoliticaldivForm
 
 def profile(request, slug):
     template_name = 'profile.html'
@@ -82,30 +82,16 @@ def wpdistrict(request):
     context = {'title':'Add Districts','form':form,'items':items,'message':'You Should Add Required Zone Before'}
     return render (request, template_name, context)
 
-def wpvdc(request):
+def wppoliticaldiv(request):
     if request.method =='POST':
-        form = WpVdcForm(request.POST)
+        form = WpPoliticaldivForm(request.POST)
         if form.is_valid():
             form = form.save(commit=False)
             form.save()
             return redirect('wpvdc')
     else:
-        form = WpVdcForm()
+        form = WpPoliticaldivForm()
     template_name = 'wp-admin/form.html'
-    items = Vdc.objects.all()
-    context = {'title':'Add Vdc','form':form,'items':items,'message':'You Should Add Required Zone and Districts Before'}
-    return render (request, template_name, context)
-
-def wpmunicipality(request):
-    if request.method =='POST':
-        form = WpMunicipalityForm(request.POST)
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.save()
-            return redirect('wpvdc')
-    else:
-        form = WpMunicipalityForm()
-    template_name = 'wp-admin/form.html'
-    items = Municipality.objects.all()
-    context = {'title':'Add Municipality','form':form,'items':items,'message':'You Should Add Required Zone and Districts Before'}
+    items = Politicaldiv.objects.all()
+    context = {'title':'Add Political Division','form':form,'items':items,'message':'You Should Add Required Zone and Districts Before'}
     return render (request, template_name, context)

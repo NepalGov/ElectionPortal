@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Party,Candidate,Post,Feedback,Zone,District,Vdc,Municipality
+from .models import Party,Candidate,Post,Feedback,Zone,District,Politicaldiv
 
 class CandidateAdmin(admin.ModelAdmin):
     list_display=("id","name", "party","criminalcase")
@@ -24,11 +24,8 @@ class ZoneAdmin(admin.ModelAdmin):
 class DistrictAdmin(admin.ModelAdmin):
     list_display = ['id','name','zone']
 
-class VdcAdmin(admin.ModelAdmin):
-    list_display = ['id','name','zone', 'district']
-
-class MunicipalityAdmin(admin.ModelAdmin):
-    list_display = ['id','name','zone', 'district']
+class PoliticaldivAdmin(admin.ModelAdmin):
+    list_display = ['id','name','zone', 'district','group']
 
 
 admin.site.register(Party, PartyAdmin)
@@ -37,5 +34,4 @@ admin.site.register(Post, PostAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
 admin.site.register(Zone, ZoneAdmin)
 admin.site.register(District, DistrictAdmin)
-admin.site.register(Vdc, VdcAdmin)
-admin.site.register(Municipality, MunicipalityAdmin)
+admin.site.register(Politicaldiv, PoliticaldivAdmin)
