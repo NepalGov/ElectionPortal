@@ -4,4 +4,11 @@ Discover everything election! This Repo is committed for providing free, compreh
 
 Use the settings.py.save as settings.py
 
-then run python manage.py collectstatic
+Run the Folling.
+
+`python manage.py makemigrations`
+
+`python manage.py migrate`
+
+`python manage.py collectstatic`
+
