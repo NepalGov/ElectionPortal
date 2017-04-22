@@ -3,5 +3,5 @@ Discover everything election! This Repo is committed for providing free, compreh
 
 
 Use the settings.py.save as settings.py
-add app e2074 in installed app
+
 then run python manage.py collectstatic
