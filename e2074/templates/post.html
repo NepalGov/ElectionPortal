@@ -1,13 +1,11 @@
----
-layout: base
----
+
 <br/>
 <div class="thdc-grid">
   <div class="thdc-whole-page">
-    <h1 style="text-align:center;">{{ page.title }}</h1>
-    <p style="text-align:center;">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p><br/><br/>
+    <h1 style="text-align:center;">{{ post.title }}</h1>
+    <p style="text-align:center;">{{ post.published }} • {{ post.author }}</p><br/><br/>
     <article>
-        {{ content }}
+        {{ post.content }}
     </article>
   </div>
 </div>

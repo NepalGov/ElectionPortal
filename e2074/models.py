@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+from django.contrib.auth.models import User #To use User's name in author
 
 class Zone(models.Model):
     name = models.CharField(max_length=20)
@@ -15,20 +16,15 @@ class District(models.Model):
     def __str__(self):
         return self.name
 
-class Vdc(models.Model):
+class Politicaldiv(models.Model):
     name = models.CharField(max_length=20)
     zone = models.ForeignKey(Zone)
     district = models.ForeignKey(District)
-    ward = models.IntegerField()
-
-    def __str__(self):
-        return self.name
-
-class Municipality(models.Model):
-    name = models.CharField(max_length=20)
-    zone = models.ForeignKey(Zone)
-    district = models.ForeignKey(District)
-    ward = models.IntegerField()
+    MUNICI_VDC = (
+        ('1', 'Municipality'),
+        ('2', 'Vdc'),
+    )
+    group = models.IntegerField(choices=MUNICI_VDC)
 
     def __str__(self):
         return self.name
@@ -52,8 +48,7 @@ class Candidate(models.Model):
     party = models.ForeignKey(Party)
     zone = models.ForeignKey(Zone)
     district = models.ForeignKey(District)
-    vdc = models.ForeignKey(Vdc, blank=True, null=True)
-    municipality = models.ForeignKey(Municipality, blank=True, null=True)
+    politicaldiv = models.ForeignKey(Politicaldiv)
     GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female'),
@@ -77,6 +72,7 @@ class Candidate(models.Model):
 
 
 class Post(models.Model):
+    auther = models.ForeignKey(User)
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     posted = models.DateField(auto_now=True)
