@@ -42,28 +42,33 @@
 </header>
 <div class="election-grid">
   <div class="election-width-one-third">
-    <ol class="election-unstyled-list">
-      {% for blogs in blogs %}
-      {% if blogs.home == '1' %}
-      <li><h3><a href="{% url 'post' blogs.slug %}">{{ blogs.title }}</a></h3><p class="list">{{ blogs.content | truncatechars:60 }}</p></li>
-      {% endif %}
-      {% endfor %}
+    <ol class="election-unstyled-list">{% for blogs in blogs %}{% if blogs.home == '1' %}
+      <li>
+        <h3>
+          <a href="{% url 'post' blogs.slug %}">{{ blogs.title }}</a>
+        </h3>
+        <p class="list">{{ blogs.content | truncatechars:60 }}</p>
+      </li>{% endif %}{% endfor %}
     </ol>
   </div>
   <div class="election-width-one-third">
-    <ol class="election-unstyled-list">
-      {% for blogs in blogs %}{% if blogs.home == '2' %}
-      <li><h3><a href="{% url 'post' blogs.slug %}">{{ blogs.title }}</a></h3><p class="list">{{ blogs.content | truncatechars:60 }}</p></li>
-      {% endif %}{% endfor %}
+    <ol class="election-unstyled-list">{% for blogs in blogs %}{% if blogs.home == '2' %}
+      <li>
+        <h3>
+          <a href="{% url 'post' blogs.slug %}">{{ blogs.title }}</a>
+        </h3>
+        <p class="list">{{ blogs.content | truncatechars:60 }}</p>
+      </li>{% endif %}{% endfor %}
     </ol>
   </div>
   <div class="election-width-one-third">
-    <ol class="election-unstyled-list">
-        {% for blogs in blogs %}
-      {% if blogs.home == '3' %}
-      <li><h3><a href="{% url 'post' blogs.slug %}">{{ blogs.title }}</a></h3><p class="list">{{ blogs.content | truncatechars:60 }}</p></li>
-      {% endif %}
-      {% endfor %}
+    <ol class="election-unstyled-list">{% for blogs in blogs %}{% if blogs.home == '3' %}
+      <li>
+        <h3>
+          <a href="{% url 'post' blogs.slug %}">{{ blogs.title }}</a>
+        </h3>
+        <p class="list">{{ blogs.content | truncatechars:60 }}</p>
+      </li>{% endif %}{% endfor %}
     </ol>
   </div>
 </div><br /><br />
