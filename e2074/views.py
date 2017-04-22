@@ -14,6 +14,12 @@ def profile(request, slug):
     context = {'title': infor.name}
     return render(request,template_name,context)
 
+def post(request, slug):
+    template_name = 'post.html'
+    post = get_object_or_404(Post, slug=slug)
+    context = {'title': post.title, 'subtitle':'Discover everything election!','post':post}
+    return render(request,template_name,context)
+
 def home(request):
     if request.method =='POST':
         form = FeedbackForm(request.POST)

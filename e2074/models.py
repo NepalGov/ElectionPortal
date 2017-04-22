@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+from django.contrib.auth.models import User #To use User's name in author
 
 class Zone(models.Model):
     name = models.CharField(max_length=20)
@@ -77,6 +78,7 @@ class Candidate(models.Model):
 
 
 class Post(models.Model):
+    auther = models.ForeignKey(User)
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     posted = models.DateField(auto_now=True)
