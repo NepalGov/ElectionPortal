@@ -1,0 +1,4281 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+html {
+  font-family: "nta", Arial, sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.lt-ie9 * {
+  -webkit-filter: none !important;
+  filter: none !important;
+}
+
+.election-grid,
+.election-grid-full {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1040px;
+}
+
+.election-grid::after,
+.election-grid-full::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.election-grid {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-grid {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+
+.election-grid-full {
+  padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .election-width-one-whole {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  .election-width-one-whole:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-half {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 47.58542%;
+  }
+  .election-width-one-half:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-third {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 30.11389%;
+  }
+  .election-width-one-third:last-child {
+    margin-right: 0;
+  }
+  .election-width-two-thirds {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 65.05695%;
+  }
+  .election-width-two-thirds:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-fourth {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 47.58542%;
+  }
+  .election-width-one-fourth:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-fourth:nth-child(2n) {
+    margin-right: 0;
+  }
+  .election-width-three-fourths {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+  .election-width-three-fourths:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-sixth {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 30.11389%;
+  }
+  .election-width-one-sixth:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-sixth:nth-child(3n) {
+    margin-right: 0;
+  }
+  .election-width-five-sixths {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 65.05695%;
+  }
+  .election-width-five-sixths:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-twelfth {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 30.11389%;
+  }
+  .election-width-one-twelfth:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-twelfth:nth-child(3n) {
+    margin-right: 0;
+  }
+  .election-width-five-twelfths {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 30.11389%;
+  }
+  .election-width-five-twelfths:last-child {
+    margin-right: 0;
+  }
+  .election-width-seven-twelfths {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 65.05695%;
+  }
+  .election-width-seven-twelfths:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .election-width-one-whole {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  .election-width-one-whole:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-half {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+  }
+  .election-width-one-half:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-third {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+  }
+  .election-width-one-third:last-child {
+    margin-right: 0;
+  }
+  .election-width-two-thirds {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+  }
+  .election-width-two-thirds:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-fourth {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  .election-width-one-fourth:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-fourth:nth-child(2n) {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  .election-width-one-fourth:nth-child(2n):last-child {
+    margin-right: 0;
+  }
+  .election-width-one-fourth:nth-child(4n) {
+    margin-right: 0;
+  }
+  .election-width-three-fourths {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%;
+  }
+  .election-width-three-fourths:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-sixth {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+  }
+  .election-width-one-sixth:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-sixth:nth-child(3n) {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+  }
+  .election-width-one-sixth:nth-child(3n):last-child {
+    margin-right: 0;
+  }
+  .election-width-one-sixth:nth-child(6n) {
+    margin-right: 0;
+  }
+  .election-width-five-sixths {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+  }
+  .election-width-five-sixths:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-twelfth {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 6.17215%;
+  }
+  .election-width-one-twelfth:last-child {
+    margin-right: 0;
+  }
+  .election-width-one-twelfth:nth-child(3n) {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 6.17215%;
+  }
+  .election-width-one-twelfth:nth-child(3n):last-child {
+    margin-right: 0;
+  }
+  .election-width-one-twelfth:nth-child(12n) {
+    margin-right: 0;
+  }
+  .election-width-five-twelfths {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+  }
+  .election-width-five-twelfths:last-child {
+    margin-right: 0;
+  }
+  .election-width-seven-twelfths {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+  }
+  .election-width-seven-twelfths:last-child {
+    margin-right: 0;
+  }
+}
+
+.election-end-row {
+  margin-right: 0;
+}
+
+.election-sr-only {
+  position: absolute;
+  left: -999em;
+}
+
+.election-button,
+.election-button-primary,
+.election-button:visited,
+.election-button-primary:visited,
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+[type="image"] {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #00823B;
+  border: 0;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+  outline: none;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+@media screen and (min-width: 481px) {
+  .election-button,
+  .election-button-primary,
+  .election-button:visited,
+  .election-button-primary:visited,
+  button,
+  [type="button"],
+  [type="submit"],
+  [type="reset"],
+  [type="image"] {
+    width: auto;
+  }
+}
+
+.election-button:hover, .election-button.election-button-hover,
+.election-button-primary:hover,
+.election-button-primary.election-button-hover,
+.election-button:visited:hover,
+.election-button:visited.election-button-hover,
+.election-button-primary:visited:hover,
+.election-button-primary:visited.election-button-hover,
+button:hover,
+button.election-button-hover,
+[type="button"]:hover,
+[type="button"].election-button-hover,
+[type="submit"]:hover,
+[type="submit"].election-button-hover,
+[type="reset"]:hover,
+[type="reset"].election-button-hover,
+[type="image"]:hover,
+[type="image"].election-button-hover {
+  background-color: #006435;
+  border-bottom: 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.election-button:focus, .election-button.election-button-focus,
+.election-button-primary:focus,
+.election-button-primary.election-button-focus,
+.election-button:visited:focus,
+.election-button:visited.election-button-focus,
+.election-button-primary:visited:focus,
+.election-button-primary:visited.election-button-focus,
+button:focus,
+button.election-button-focus,
+[type="button"]:focus,
+[type="button"].election-button-focus,
+[type="submit"]:focus,
+[type="submit"].election-button-focus,
+[type="reset"]:focus,
+[type="reset"].election-button-focus,
+[type="image"]:focus,
+[type="image"].election-button-focus {
+  box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+}
+
+.election-button:active, .election-button.election-button-active,
+.election-button-primary:active,
+.election-button-primary.election-button-active,
+.election-button:visited:active,
+.election-button:visited.election-button-active,
+.election-button-primary:visited:active,
+.election-button-primary:visited.election-button-active,
+button:active,
+button.election-button-active,
+[type="button"]:active,
+[type="button"].election-button-active,
+[type="submit"]:active,
+[type="submit"].election-button-active,
+[type="reset"]:active,
+[type="reset"].election-button-active,
+[type="image"]:active,
+[type="image"].election-button-active {
+  background-color: #112e51;
+}
+
+.election-button.election-button-primary-alt,
+.election-button-primary.election-button-primary-alt,
+.election-button:visited.election-button-primary-alt,
+.election-button-primary:visited.election-button-primary-alt,
+button.election-button-primary-alt,
+[type="button"].election-button-primary-alt,
+[type="submit"].election-button-primary-alt,
+[type="reset"].election-button-primary-alt,
+[type="image"].election-button-primary-alt {
+  background-color: #02bfe7;
+  color: #212121;
+}
+
+.election-button.election-button-primary-alt:hover, .election-button.election-button-primary-alt.election-button-hover,
+.election-button-primary.election-button-primary-alt:hover,
+.election-button-primary.election-button-primary-alt.election-button-hover,
+.election-button:visited.election-button-primary-alt:hover,
+.election-button:visited.election-button-primary-alt.election-button-hover,
+.election-button-primary:visited.election-button-primary-alt:hover,
+.election-button-primary:visited.election-button-primary-alt.election-button-hover,
+button.election-button-primary-alt:hover,
+button.election-button-primary-alt.election-button-hover,
+[type="button"].election-button-primary-alt:hover,
+[type="button"].election-button-primary-alt.election-button-hover,
+[type="submit"].election-button-primary-alt:hover,
+[type="submit"].election-button-primary-alt.election-button-hover,
+[type="reset"].election-button-primary-alt:hover,
+[type="reset"].election-button-primary-alt.election-button-hover,
+[type="image"].election-button-primary-alt:hover,
+[type="image"].election-button-primary-alt.election-button-hover {
+  background-color: #00a6d2;
+}
+
+.election-button.election-button-primary-alt:active, .election-button.election-button-primary-alt.election-button-active,
+.election-button-primary.election-button-primary-alt:active,
+.election-button-primary.election-button-primary-alt.election-button-active,
+.election-button:visited.election-button-primary-alt:active,
+.election-button:visited.election-button-primary-alt.election-button-active,
+.election-button-primary:visited.election-button-primary-alt:active,
+.election-button-primary:visited.election-button-primary-alt.election-button-active,
+button.election-button-primary-alt:active,
+button.election-button-primary-alt.election-button-active,
+[type="button"].election-button-primary-alt:active,
+[type="button"].election-button-primary-alt.election-button-active,
+[type="submit"].election-button-primary-alt:active,
+[type="submit"].election-button-primary-alt.election-button-active,
+[type="reset"].election-button-primary-alt:active,
+[type="reset"].election-button-primary-alt.election-button-active,
+[type="image"].election-button-primary-alt:active,
+[type="image"].election-button-primary-alt.election-button-active {
+  background-color: #046b99;
+  color: #ffffff;
+}
+
+.election-button.election-button-secondary,
+.election-button-primary.election-button-secondary,
+.election-button:visited.election-button-secondary,
+.election-button-primary:visited.election-button-secondary,
+button.election-button-secondary,
+[type="button"].election-button-secondary,
+[type="submit"].election-button-secondary,
+[type="reset"].election-button-secondary,
+[type="image"].election-button-secondary {
+  background-color: #e31c3d;
+}
+
+.election-button.election-button-secondary:hover, .election-button.election-button-secondary.election-button-hover,
+.election-button-primary.election-button-secondary:hover,
+.election-button-primary.election-button-secondary.election-button-hover,
+.election-button:visited.election-button-secondary:hover,
+.election-button:visited.election-button-secondary.election-button-hover,
+.election-button-primary:visited.election-button-secondary:hover,
+.election-button-primary:visited.election-button-secondary.election-button-hover,
+button.election-button-secondary:hover,
+button.election-button-secondary.election-button-hover,
+[type="button"].election-button-secondary:hover,
+[type="button"].election-button-secondary.election-button-hover,
+[type="submit"].election-button-secondary:hover,
+[type="submit"].election-button-secondary.election-button-hover,
+[type="reset"].election-button-secondary:hover,
+[type="reset"].election-button-secondary.election-button-hover,
+[type="image"].election-button-secondary:hover,
+[type="image"].election-button-secondary.election-button-hover {
+  background-color: #cd2026;
+}
+
+.election-button.election-button-secondary:active, .election-button.election-button-secondary.election-button-active,
+.election-button-primary.election-button-secondary:active,
+.election-button-primary.election-button-secondary.election-button-active,
+.election-button:visited.election-button-secondary:active,
+.election-button:visited.election-button-secondary.election-button-active,
+.election-button-primary:visited.election-button-secondary:active,
+.election-button-primary:visited.election-button-secondary.election-button-active,
+button.election-button-secondary:active,
+button.election-button-secondary.election-button-active,
+[type="button"].election-button-secondary:active,
+[type="button"].election-button-secondary.election-button-active,
+[type="submit"].election-button-secondary:active,
+[type="submit"].election-button-secondary.election-button-active,
+[type="reset"].election-button-secondary:active,
+[type="reset"].election-button-secondary.election-button-active,
+[type="image"].election-button-secondary:active,
+[type="image"].election-button-secondary.election-button-active {
+  background-color: #981b1e;
+}
+
+.election-button.election-button-gray,
+.election-button-primary.election-button-gray,
+.election-button:visited.election-button-gray,
+.election-button-primary:visited.election-button-gray,
+button.election-button-gray,
+[type="button"].election-button-gray,
+[type="submit"].election-button-gray,
+[type="reset"].election-button-gray,
+[type="image"].election-button-gray {
+  background-color: #5b616b;
+}
+
+.election-button.election-button-gray:hover, .election-button.election-button-gray.election-button-hover,
+.election-button-primary.election-button-gray:hover,
+.election-button-primary.election-button-gray.election-button-hover,
+.election-button:visited.election-button-gray:hover,
+.election-button:visited.election-button-gray.election-button-hover,
+.election-button-primary:visited.election-button-gray:hover,
+.election-button-primary:visited.election-button-gray.election-button-hover,
+button.election-button-gray:hover,
+button.election-button-gray.election-button-hover,
+[type="button"].election-button-gray:hover,
+[type="button"].election-button-gray.election-button-hover,
+[type="submit"].election-button-gray:hover,
+[type="submit"].election-button-gray.election-button-hover,
+[type="reset"].election-button-gray:hover,
+[type="reset"].election-button-gray.election-button-hover,
+[type="image"].election-button-gray:hover,
+[type="image"].election-button-gray.election-button-hover {
+  background-color: #323a45;
+}
+
+.election-button.election-button-gray:active, .election-button.election-button-gray.election-button-active,
+.election-button-primary.election-button-gray:active,
+.election-button-primary.election-button-gray.election-button-active,
+.election-button:visited.election-button-gray:active,
+.election-button:visited.election-button-gray.election-button-active,
+.election-button-primary:visited.election-button-gray:active,
+.election-button-primary:visited.election-button-gray.election-button-active,
+button.election-button-gray:active,
+button.election-button-gray.election-button-active,
+[type="button"].election-button-gray:active,
+[type="button"].election-button-gray.election-button-active,
+[type="submit"].election-button-gray:active,
+[type="submit"].election-button-gray.election-button-active,
+[type="reset"].election-button-gray:active,
+[type="reset"].election-button-gray.election-button-active,
+[type="image"].election-button-gray:active,
+[type="image"].election-button-gray.election-button-active {
+  background-color: #212121;
+}
+
+.election-button.election-button-outline,
+.election-button-primary.election-button-outline,
+.election-button:visited.election-button-outline,
+.election-button-primary:visited.election-button-outline,
+button.election-button-outline,
+[type="button"].election-button-outline,
+[type="submit"].election-button-outline,
+[type="reset"].election-button-outline,
+[type="image"].election-button-outline {
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px #0071bc;
+  color: #0071bc;
+}
+
+.election-button.election-button-outline:hover, .election-button.election-button-outline.election-button-hover,
+.election-button-primary.election-button-outline:hover,
+.election-button-primary.election-button-outline.election-button-hover,
+.election-button:visited.election-button-outline:hover,
+.election-button:visited.election-button-outline.election-button-hover,
+.election-button-primary:visited.election-button-outline:hover,
+.election-button-primary:visited.election-button-outline.election-button-hover,
+button.election-button-outline:hover,
+button.election-button-outline.election-button-hover,
+[type="button"].election-button-outline:hover,
+[type="button"].election-button-outline.election-button-hover,
+[type="submit"].election-button-outline:hover,
+[type="submit"].election-button-outline.election-button-hover,
+[type="reset"].election-button-outline:hover,
+[type="reset"].election-button-outline.election-button-hover,
+[type="image"].election-button-outline:hover,
+[type="image"].election-button-outline.election-button-hover {
+  box-shadow: inset 0 0 0 2px #205493;
+  color: #205493;
+}
+
+.election-button.election-button-outline:active, .election-button.election-button-outline.election-button-active,
+.election-button-primary.election-button-outline:active,
+.election-button-primary.election-button-outline.election-button-active,
+.election-button:visited.election-button-outline:active,
+.election-button:visited.election-button-outline.election-button-active,
+.election-button-primary:visited.election-button-outline:active,
+.election-button-primary:visited.election-button-outline.election-button-active,
+button.election-button-outline:active,
+button.election-button-outline.election-button-active,
+[type="button"].election-button-outline:active,
+[type="button"].election-button-outline.election-button-active,
+[type="submit"].election-button-outline:active,
+[type="submit"].election-button-outline.election-button-active,
+[type="reset"].election-button-outline:active,
+[type="reset"].election-button-outline.election-button-active,
+[type="image"].election-button-outline:active,
+[type="image"].election-button-outline.election-button-active {
+  box-shadow: inset 0 0 0 2px #112e51;
+  color: #112e51;
+}
+
+.election-button.election-button-outline:focus, .election-button.election-button-outline.election-button-focus,
+.election-button-primary.election-button-outline:focus,
+.election-button-primary.election-button-outline.election-button-focus,
+.election-button:visited.election-button-outline:focus,
+.election-button:visited.election-button-outline.election-button-focus,
+.election-button-primary:visited.election-button-outline:focus,
+.election-button-primary:visited.election-button-outline.election-button-focus,
+button.election-button-outline:focus,
+button.election-button-outline.election-button-focus,
+[type="button"].election-button-outline:focus,
+[type="button"].election-button-outline.election-button-focus,
+[type="submit"].election-button-outline:focus,
+[type="submit"].election-button-outline.election-button-focus,
+[type="reset"].election-button-outline:focus,
+[type="reset"].election-button-outline.election-button-focus,
+[type="image"].election-button-outline:focus,
+[type="image"].election-button-outline.election-button-focus {
+  box-shadow: inset 0 0 0 2px #112e51, 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+}
+
+.election-button.election-button-outline-inverse,
+.election-button-primary.election-button-outline-inverse,
+.election-button:visited.election-button-outline-inverse,
+.election-button-primary:visited.election-button-outline-inverse,
+button.election-button-outline-inverse,
+[type="button"].election-button-outline-inverse,
+[type="submit"].election-button-outline-inverse,
+[type="reset"].election-button-outline-inverse,
+[type="image"].election-button-outline-inverse {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px #ffffff;
+  color: #ffffff;
+}
+
+.election-button.election-button-outline-inverse:hover, .election-button.election-button-outline-inverse.election-button-hover,
+.election-button-primary.election-button-outline-inverse:hover,
+.election-button-primary.election-button-outline-inverse.election-button-hover,
+.election-button:visited.election-button-outline-inverse:hover,
+.election-button:visited.election-button-outline-inverse.election-button-hover,
+.election-button-primary:visited.election-button-outline-inverse:hover,
+.election-button-primary:visited.election-button-outline-inverse.election-button-hover,
+button.election-button-outline-inverse:hover,
+button.election-button-outline-inverse.election-button-hover,
+[type="button"].election-button-outline-inverse:hover,
+[type="button"].election-button-outline-inverse.election-button-hover,
+[type="submit"].election-button-outline-inverse:hover,
+[type="submit"].election-button-outline-inverse.election-button-hover,
+[type="reset"].election-button-outline-inverse:hover,
+[type="reset"].election-button-outline-inverse.election-button-hover,
+[type="image"].election-button-outline-inverse:hover,
+[type="image"].election-button-outline-inverse.election-button-hover {
+  box-shadow: inset 0 0 0 2px #d6d7d9;
+  color: #d6d7d9;
+}
+
+.election-button.election-button-outline-inverse:active, .election-button.election-button-outline-inverse.election-button-active,
+.election-button-primary.election-button-outline-inverse:active,
+.election-button-primary.election-button-outline-inverse.election-button-active,
+.election-button:visited.election-button-outline-inverse:active,
+.election-button:visited.election-button-outline-inverse.election-button-active,
+.election-button-primary:visited.election-button-outline-inverse:active,
+.election-button-primary:visited.election-button-outline-inverse.election-button-active,
+button.election-button-outline-inverse:active,
+button.election-button-outline-inverse.election-button-active,
+[type="button"].election-button-outline-inverse:active,
+[type="button"].election-button-outline-inverse.election-button-active,
+[type="submit"].election-button-outline-inverse:active,
+[type="submit"].election-button-outline-inverse.election-button-active,
+[type="reset"].election-button-outline-inverse:active,
+[type="reset"].election-button-outline-inverse.election-button-active,
+[type="image"].election-button-outline-inverse:active,
+[type="image"].election-button-outline-inverse.election-button-active {
+  box-shadow: inset 0 0 0 2px #aeb0b5;
+  color: #d6d7d9;
+}
+
+.election-button.election-button-outline-inverse:focus, .election-button.election-button-outline-inverse.election-button-focus,
+.election-button-primary.election-button-outline-inverse:focus,
+.election-button-primary.election-button-outline-inverse.election-button-focus,
+.election-button:visited.election-button-outline-inverse:focus,
+.election-button:visited.election-button-outline-inverse.election-button-focus,
+.election-button-primary:visited.election-button-outline-inverse:focus,
+.election-button-primary:visited.election-button-outline-inverse.election-button-focus,
+button.election-button-outline-inverse:focus,
+button.election-button-outline-inverse.election-button-focus,
+[type="button"].election-button-outline-inverse:focus,
+[type="button"].election-button-outline-inverse.election-button-focus,
+[type="submit"].election-button-outline-inverse:focus,
+[type="submit"].election-button-outline-inverse.election-button-focus,
+[type="reset"].election-button-outline-inverse:focus,
+[type="reset"].election-button-outline-inverse.election-button-focus,
+[type="image"].election-button-outline-inverse:focus,
+[type="image"].election-button-outline-inverse.election-button-focus {
+  box-shadow: inset 0 0 0 2px #aeb0b5, 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+}
+
+.election-button.election-button-big,
+.election-button-primary.election-button-big,
+.election-button:visited.election-button-big,
+.election-button-primary:visited.election-button-big,
+button.election-button-big,
+[type="button"].election-button-big,
+[type="submit"].election-button-big,
+[type="reset"].election-button-big,
+[type="image"].election-button-big {
+  font-size: 1.9rem;
+  padding: 1.5rem 3rem;
+}
+
+[type="submit"]:disabled,
+.election-button-disabled {
+  background-color: #d6d7d9;
+  color: #323a45;
+  pointer-events: none;
+}
+
+[type="submit"]:disabled:hover, [type="submit"]:disabled.election-button-hover, [type="submit"]:disabled:active, [type="submit"]:disabled.election-button-active, [type="submit"]:disabled:focus,
+.election-button-disabled:hover,
+.election-button-disabled.election-button-hover,
+.election-button-disabled:active,
+.election-button-disabled.election-button-active,
+.election-button-disabled:focus {
+  background-color: #d6d7d9;
+  border: 0;
+  box-shadow: none;
+  color: #323a45;
+}
+
+.election-button-unstyled {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+}
+
+.election-button-unstyled:hover {
+  background-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+.media_link {
+  display: inline-block;
+  line-height: 0;
+}
+
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #5b616b;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #212121;
+  display: block;
+  font-size: 1.7rem;
+  height: 4.4rem;
+  line-height: 1.3;
+  margin: 0.2em 0;
+  max-width: 46rem;
+  outline: none;
+  padding: 1rem 0.7em;
+  width: 100%;
+}
+
+input:focus, input.election-input-focus,
+textarea:focus,
+textarea.election-input-focus,
+select:focus,
+select.election-input-focus {
+  box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+}
+
+input.election-input-success,
+textarea.election-input-success,
+select.election-input-success {
+  border: 3px solid #4aa564;
+}
+
+.election-input-error {
+  border-left: 4px solid #cd2026;
+  margin-top: 3rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  padding-top: 0.8rem;
+  position: relative;
+  right: 1.9rem;
+}
+
+.election-input-error input,
+.election-input-error textarea,
+.election-input-error select {
+  border: 3px solid #cd2026;
+  width: calc(100% + 1.9rem);
+}
+
+.election-input-error label {
+  margin-top: 0;
+}
+
+.election-input-error .election-input-inline {
+  border: 1px solid #5b616b;
+  width: inherit;
+}
+
+.election-input-error .election-input-inline-error {
+  border: 3px solid #cd2026;
+}
+
+.election-input-error-label {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.election-input-error-message {
+  color: #cd2026;
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+
+label {
+  display: block;
+  margin-top: 3rem;
+  max-width: 46rem;
+}
+
+textarea {
+  height: 16rem;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  background-image: url("../img/arrow-down.png");
+  background-image: url("../img/arrow-down.svg");
+  background-position: right 1.3rem center;
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
+}
+
+legend {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.election-fieldset-inputs label {
+  margin-top: 0;
+}
+
+.election-form-hint {
+  color: #757575;
+  font-family: "nta", Arial, sans-serif;
+  margin-bottom: 0;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  margin-left: -2rem;
+  opacity: 0;
+  position: absolute;
+}
+
+.lt-ie9 [type="checkbox"], .lt-ie9
+[type="radio"] {
+  border: 0;
+  float: left;
+  margin: 0.4em 0.4em 0 0;
+  position: static;
+  width: auto;
+}
+
+[type="checkbox"] + label,
+[type="radio"] + label {
+  cursor: pointer;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+
+[type="checkbox"] + label::before,
+[type="radio"] + label::before {
+  background: #ffffff;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0 1px #757575;
+  content: '\a0';
+  display: inline-block;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  margin-right: 0.6em;
+  text-indent: 0.15em;
+  vertical-align: middle\0;
+  width: 1.8rem;
+}
+
+[type="radio"] + label::before {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #757575;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 100%;
+}
+
+[type="checkbox"]:checked + label::before,
+[type="radio"]:checked + label::before {
+  background-color: #0071bc;
+  box-shadow: 0 0 0 1px #0071bc;
+}
+
+[type="radio"]:checked + label::before {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0071bc;
+}
+
+[type="radio"]:focus + label::before {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0071bc, 0 0 3px 4px #3e94cf, 0 0 7px 4px #3e94cf;
+}
+
+[type="checkbox"]:checked + label::before {
+  background-image: url("../img/correct8.png");
+  background-image: url("../img/correct8.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #0071bc;
+}
+
+[type="checkbox"]:disabled + label {
+  color: #5b616b;
+}
+
+[type="checkbox"]:disabled + label::before,
+[type="radio"]:disabled + label::before {
+  background: #d6d7d9;
+  box-shadow: 0 0 0 1px #aeb0b5;
+  cursor: not-allowed;
+}
+
+[type=range] {
+  -webkit-appearance: none;
+  border: none;
+  padding-left: 0;
+  width: 100%;
+}
+
+[type=range]:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+[type=range]::-webkit-slider-runnable-track {
+  background: #aeb0b5;
+  border: 1px solid #757575;
+  cursor: pointer;
+  height: 1.2rem;
+  width: 100%;
+}
+
+[type=range]::-moz-range-track {
+  background: #0071bc;
+  border: 1px solid #757575;
+  cursor: pointer;
+  height: 1.2rem;
+  width: 100%;
+}
+
+[type=range]::-ms-track {
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  height: 1.2rem;
+  width: 100%;
+}
+
+[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #757575;
+  height: 2.2rem;
+  border-radius: 1.5rem;
+  background: #f1f1f1;
+  cursor: pointer;
+  margin-top: -.65rem;
+  width: 2.2rem;
+}
+
+[type=range]::-moz-range-thumb {
+  background: #f1f1f1;
+  border: 1px solid #757575;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+[type=range]::-ms-thumb {
+  background: #f1f1f1;
+  border: 1px solid #757575;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+[type=range]::-ms-fill-lower {
+  background: #aeb0b5;
+  border: 1px solid #757575;
+  border-radius: 2rem;
+}
+
+[type=range]::-ms-fill-upper {
+  background: #aeb0b5;
+  border: 1px solid #757575;
+  border-radius: 2rem;
+}
+
+[type=range]:focus::-webkit-slider-thumb {
+  border: 2px solid #3e94cf;
+}
+
+[type=range]:focus::-moz-range-thumb {
+  border: 2px solid #3e94cf;
+}
+
+[type=range]:focus::-ms-thumb {
+  border: 2px solid #3e94cf;
+}
+
+.election-date-of-birth label {
+  margin-top: 0;
+}
+
+.election-date-of-birth [type=number]::-webkit-inner-spin-button,
+.election-date-of-birth [type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.election-date-of-birth [type=number] {
+  -moz-appearance: textfield;
+}
+
+.election-form-group-day,
+.election-form-group-month,
+.election-form-group-year {
+  clear: none;
+  float: left;
+  margin-right: 1.5rem;
+  width: 5rem;
+}
+
+.election-form-group-year {
+  width: 7rem;
+}
+
+.election-label, .election-label-big {
+  background-color: #0071bc;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  padding: 0.1rem 0.7rem;
+  text-transform: uppercase;
+}
+
+.election-label:only-of-type, .election-label-big:only-of-type {
+  margin-right: 0;
+}
+
+.election-label-big {
+  font-size: 1.7rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+}
+
+ul,
+ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.94em;
+}
+
+li {
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+h1 + ul,
+h1 + ol,
+h2 + ul,
+h2 + ol,
+h3 + ul,
+h3 + ol,
+h4 + ul,
+h4 + ol,
+h5 + ul,
+h5 + ol,
+h6 + ul,
+h6 + ol,
+p + ul,
+p + ol {
+  margin-top: 0;
+}
+
+.election-unstyled-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.election-unstyled-list > li {
+  margin-bottom: 0;
+}
+
+table {
+  border-spacing: 0;
+  margin: 2em 0;
+  min-width: 100%;
+}
+
+table thead th,
+table thead td {
+  background-color: #f1f1f1;
+}
+
+table th {
+  text-align: left;
+}
+
+table tbody th {
+  font-weight: 400;
+}
+
+table th,
+table td {
+  background-color: #ffffff;
+  border: 1px solid #5b616b;
+  padding: 1.5rem;
+}
+
+.election-table-borderless thead tr {
+  background-color: transparent;
+}
+
+.election-table-borderless thead th {
+  border-top: 0;
+}
+
+.election-table-borderless th,
+.election-table-borderless td {
+  border-left: 0;
+  border-right: 0;
+}
+
+html {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 10px;
+}
+
+body {
+  font-size: 2rem;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+a {
+  color: #0071bc;
+  text-decoration: underline;
+}
+
+a:hover, a:active {
+  color: #205493;
+}
+
+a:visited {
+  color: #4c2c92;
+}
+
+a:focus {
+  box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+  outline: 0;
+}
+
+.election-external_link::after {
+  background: url("../img/external-link.png") no-repeat 0 0;
+  background: url("../img/external-link.svg") no-repeat 0 0;
+  background-size: 100%;
+  content: '';
+  display: inline-block;
+  height: 0.65em;
+  margin-bottom: -1px;
+  margin-left: 4px;
+  width: 0.65em;
+}
+
+.election-external_link:hover::after {
+  background-image: url("../img/external-link-hover.png");
+  background-image: url("../img/external-link-hover.svg");
+}
+
+.election-external_link-alt::after {
+  background: url("../img/external-link-alt.png") no-repeat 0 0;
+  background: url("../img/external-link-alt.svg") no-repeat 0 0;
+  background-size: 100%;
+  content: '';
+  display: inline-block;
+  height: 0.65em;
+  margin-bottom: -1px;
+  margin-left: 4px;
+  width: 0.65em;
+}
+
+.election-external_link-alt:hover::after {
+  background-image: url("../img/external-link-alt-hover.png");
+  background-image: url("../img/external-link-alt-hover.svg");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-family: "nta", Arial, sans-serif;
+  line-height: 1.3;
+  margin-bottom: .5em;
+  margin-top: 1.5em;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h6 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+cite,
+var,
+address,
+dfn {
+  font-style: normal;
+}
+
+.election-content p:not(.election-font-lead) {
+  max-width: 53rem;
+}
+
+.election-content-list {
+  max-width: 53rem;
+}
+
+.election-sans p,
+.election-sans a,
+.election-sans li,
+.election-sans span {
+  font-family: "nta", Arial, sans-serif;
+}
+
+.election-sans a {
+  border-bottom: none;
+  font-weight: 700;
+}
+
+.election-serif p,
+.election-serif a,
+.election-serif li,
+.election-serif span {
+  font-family: "nta", Arial, sans-serif;
+}
+
+.election-display {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 481px) {
+  .election-display {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-display {
+    font-size: 5.2rem;
+    font-weight: 700;
+  }
+}
+
+.election-font-lead {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 77rem;
+}
+
+.election-image-block {
+  position: relative;
+}
+
+.election-image-text-block {
+  color: #ffffff;
+  left: 0;
+  margin-left: 8%;
+  position: absolute;
+  top: 0;
+}
+
+.election-image-text {
+  margin-top: 0;
+}
+
+.election-drop_text {
+  margin-bottom: 0;
+}
+
+.election-background-dark {
+  background-color: #323a45;
+}
+
+.election-background-dark p,
+.election-background-dark span {
+  color: #ffffff;
+}
+
+.election-background-dark a {
+  color: #d6d7d9;
+}
+
+.election-background-dark a:hover {
+  color: #ffffff;
+}
+
+.election-text-small {
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+
+.election-section > :first-child,
+.election-grid > :first-child {
+  margin-top: 0;
+}
+
+.election-section > :last-child,
+.election-grid > :last-child {
+  margin-bottom: 0;
+}
+
+.election-width-one-whole:first-child > :first-child,
+.election-width-one-half:first-child > :first-child,
+.election-width-one-third:first-child > :first-child,
+.election-width-two-thirds:first-child > :first-child,
+.election-width-one-fourth:first-child > :first-child,
+.election-width-three-fourths:first-child > :first-child,
+.election-width-one-sixth:first-child > :first-child,
+.election-width-five-sixths:first-child > :first-child,
+.election-width-one-twelfth:first-child > :first-child {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .election-width-one-whole > :first-child,
+  .election-width-one-half > :first-child,
+  .election-width-one-third > :first-child,
+  .election-width-two-thirds > :first-child,
+  .election-width-one-fourth > :first-child,
+  .election-width-three-fourths > :first-child,
+  .election-width-one-sixth > :first-child,
+  .election-width-five-sixths > :first-child,
+  .election-width-one-twelfth > :first-child {
+    margin-top: 0;
+  }
+}
+
+.election-width-one-whole:last-child > :last-child,
+.election-width-one-half:last-child > :last-child,
+.election-width-one-third:last-child > :last-child,
+.election-width-two-thirds:last-child > :last-child,
+.election-width-one-fourth:last-child > :last-child,
+.election-width-three-fourths:last-child > :last-child,
+.election-width-one-sixth:last-child > :last-child,
+.election-width-five-sixths:last-child > :last-child,
+.election-width-one-twelfth:last-child > :last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .election-width-one-whole > :last-child,
+  .election-width-one-half > :last-child,
+  .election-width-one-third > :last-child,
+  .election-width-two-thirds > :last-child,
+  .election-width-one-fourth > :last-child,
+  .election-width-three-fourths > :last-child,
+  .election-width-one-sixth > :last-child,
+  .election-width-five-sixths > :last-child,
+  .election-width-one-twelfth > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.election-accordion,
+.election-accordion-bordered {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+  color: #212121;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.election-accordion > li,
+.election-accordion-bordered > li {
+  margin-bottom: 0;
+}
+
+.election-accordion + .election-accordion,
+.election-accordion + .election-accordion-bordered,
+.election-accordion-bordered + .election-accordion,
+.election-accordion-bordered + .election-accordion-bordered {
+  margin-top: 1rem;
+}
+
+.election-accordion > ul,
+.election-accordion-bordered > ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+  color: #212121;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.election-accordion > ul > li,
+.election-accordion-bordered > ul > li {
+  margin-bottom: 0;
+}
+
+.election-accordion > ul > li,
+.election-accordion-bordered > ul > li {
+  background-color: #f1f1f1;
+  font-family: "nta", Arial, sans-serif;
+  list-style: none;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.election-accordion > ul button,
+.election-accordion-bordered > ul button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  background-color: #f1f1f1;
+  background-image: url("../img/minus.png");
+  background-image: url("../img/minus.svg");
+  background-position: right 3rem center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 1.5rem 5.5rem 1.5rem 3rem;
+  width: 100%;
+}
+
+.election-accordion > ul button:hover,
+.election-accordion-bordered > ul button:hover {
+  background-color: transparent;
+}
+
+.election-accordion > ul button:focus,
+.election-accordion-bordered > ul button:focus {
+  box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+}
+
+.election-accordion > ul button:hover,
+.election-accordion-bordered > ul button:hover {
+  background-color: #d6d7d9;
+  color: #212121;
+}
+
+.election-accordion > ul button h1,
+.election-accordion > ul button h2,
+.election-accordion > ul button h3,
+.election-accordion > ul button h4,
+.election-accordion > ul button h5,
+.election-accordion > ul button h6,
+.election-accordion-bordered > ul button h1,
+.election-accordion-bordered > ul button h2,
+.election-accordion-bordered > ul button h3,
+.election-accordion-bordered > ul button h4,
+.election-accordion-bordered > ul button h5,
+.election-accordion-bordered > ul button h6 {
+  margin: 0;
+}
+
+.election-accordion > ul [aria-expanded=false],
+.election-accordion-bordered > ul [aria-expanded=false] {
+  background-image: url("../img/plus.png");
+  background-image: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
+}
+
+.election-accordion > li,
+.election-accordion-bordered > li {
+  background-color: #f1f1f1;
+  font-family: "nta", Arial, sans-serif;
+  list-style: none;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.election-accordion-bordered .election-accordion-content {
+  border-bottom: 3px solid #f1f1f1;
+  border-left: 3px solid #f1f1f1;
+  border-right: 3px solid #f1f1f1;
+}
+
+.election-accordion-content {
+  background-color: #ffffff;
+  overflow: auto;
+  padding: 3rem;
+}
+
+.election-accordion-content > *:first-child {
+  margin-top: 0;
+}
+
+.election-accordion-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.election-accordion-content:not([aria-hidden]) {
+  position: absolute;
+  left: -999em;
+}
+
+.election-accordion-content[aria-hidden=true] {
+  display: none;
+}
+
+.election-accordion-button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  background-color: #f1f1f1;
+  background-image: url("../img/minus.png");
+  background-image: url("../img/minus.svg");
+  background-position: right 3rem center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 1.5rem 5.5rem 1.5rem 3rem;
+  width: 100%;
+}
+
+.election-accordion-button:hover {
+  background-color: transparent;
+}
+
+.election-accordion-button:focus {
+  box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+}
+
+.election-accordion-button:hover {
+  background-color: #d6d7d9;
+  color: #212121;
+}
+
+.election-accordion-button h1,
+.election-accordion-button h2,
+.election-accordion-button h3,
+.election-accordion-button h4,
+.election-accordion-button h5,
+.election-accordion-button h6 {
+  margin: 0;
+}
+
+.election-accordion-button[aria-expanded=false] {
+  background-image: url("../img/plus.png");
+  background-image: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
+}
+
+.election-alert {
+  background-color: #f1f1f1;
+  background-position: 1rem 2rem;
+  background-repeat: no-repeat;
+  background-size: 4rem;
+  margin-top: 1.5em;
+  padding: 1em;
+}
+
+@media screen and (min-width: 600px) {
+  .election-alert {
+    background-size: 5.2rem;
+  }
+}
+
+.election-alert ul {
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+
+.election-alert-icon {
+  display: table-cell;
+  padding-right: 1rem;
+}
+
+.election-alert-body {
+  display: table-cell;
+  padding-left: 3.5rem;
+  vertical-align: top;
+}
+
+@media screen and (min-width: 600px) {
+  .election-alert-body {
+    padding-left: 5rem;
+  }
+}
+
+.election-alert-heading {
+  margin-bottom: .3rem;
+  margin-top: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .election-alert-heading {
+    margin-top: .3rem;
+  }
+}
+
+.election-alert-text {
+  font-family: "nta", Arial, sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.election-alert-success {
+  background-color: #e7f4e4;
+  background-image: url("../img/alerts/success.png");
+  background-image: url("../img/alerts/success.svg");
+}
+
+.election-alert-warning {
+  background-color: #fff1d2;
+  background-image: url("../img/alerts/warning.png");
+  background-image: url("../img/alerts/warning.svg");
+}
+
+.election-alert-error {
+  background-color: #f9dede;
+  background-image: url("../img/alerts/error.png");
+  background-image: url("../img/alerts/error.svg");
+}
+
+.election-alert-info {
+  background-color: #e1f3f8;
+  background-image: url("../img/alerts/info.png");
+  background-image: url("../img/alerts/info.svg");
+}
+
+.election-alert-no_icon {
+  background-image: none;
+}
+
+.election-banner {
+  background-color: #f1f1f1;
+  padding-bottom: 0.7rem;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner {
+    font-size: 1.3rem;
+    padding-bottom: 0;
+  }
+}
+
+.election-banner-content {
+  padding-right: 1.5rem;
+  padding-bottom: 3px;
+  padding-left: 1.5rem;
+  background-color: transparent;
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .election-banner-content {
+    padding-bottom: 2.3rem;
+    padding-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-banner-content {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+
+.election-banner-content p:first-child {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-banner-content p:first-child {
+    margin-top: 0;
+  }
+}
+
+.election-banner-inner {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 1040px;
+}
+
+.election-banner-inner::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+@media screen and (min-width: 951px) {
+  .election-banner-inner {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+
+.election-banner-header {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.election-banner-header p {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-header p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: inline-block;
+  }
+}
+
+.election-banner-header img {
+  float: left;
+  margin-right: 1rem;
+  margin-top: 1px;
+  width: 2.4rem;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-header img {
+    margin-right: 0.7rem;
+    width: 2rem;
+  }
+}
+
+.election-banner-header-expanded {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #aeb0b5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  min-height: 5.6rem;
+  padding-right: 3rem;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-header-expanded {
+    border-bottom: none;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    min-height: 0;
+    padding-right: 0;
+  }
+}
+
+.election-banner-header-expanded > .election-banner-inner {
+  margin-left: 0;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-header-expanded > .election-banner-inner {
+    margin-left: auto;
+  }
+}
+
+.election-banner-header-expanded img {
+  margin-right: 2.4rem;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-header-expanded img {
+    margin-right: 0.7rem;
+  }
+}
+
+.election-banner-header-expanded p {
+  line-height: 1.3;
+  vertical-align: top;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-header-expanded p {
+    line-height: 1.5;
+    vertical-align: middle;
+  }
+}
+
+.election-banner-button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  padding-top: 1.3rem;
+  padding-left: 4.8rem;
+  background-position-x: right;
+  color: #0071bc;
+  display: block;
+  font-size: 1.2rem;
+  height: 4.3rem;
+  left: 0;
+  position: absolute;
+  text-decoration: underline;
+  top: 0;
+  width: 100%;
+}
+
+.election-banner-button:hover {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-button {
+    padding-top: 0;
+    padding-left: 0;
+    display: inline;
+    height: initial;
+    margin-left: 3px;
+    position: relative;
+    vertical-align: middle;
+    width: initial;
+  }
+}
+
+.election-banner-button:hover {
+  color: #205493;
+  text-decoration: underline;
+}
+
+.election-banner-button[aria-expanded=false] {
+  background-image: none;
+}
+
+.election-banner-button[aria-expanded=false]::after {
+  background-image: url(../img/angle-arrow-down-primary.png);
+  background-image: url(../img/angle-arrow-down-primary.svg);
+  background-size: 100%;
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-left: 0;
+}
+
+.election-banner-button[aria-expanded=false]:hover::after {
+  background-image: url(../img/angle-arrow-down-primary-hover.png);
+  background-image: url(../img/angle-arrow-down-primary-hover.svg);
+}
+
+.election-banner-button[aria-expanded=false]::after {
+  background-position-y: 1px;
+}
+
+.election-banner-button[aria-expanded=true] {
+  background-image: none;
+  height: 5.6rem;
+}
+
+.election-banner-button[aria-expanded=true]::after {
+  background-image: url(../img/close.png);
+  background-image: url(../img/close.svg);
+  background-size: 100%;
+  content: '';
+  display: inline-block;
+  height: 1.3rem;
+  width: 1.3rem;
+  margin-left: 0;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-button[aria-expanded=true] {
+    height: initial;
+    padding: 0;
+    position: relative;
+  }
+  .election-banner-button[aria-expanded=true]::after {
+    background-image: url(../img/angle-arrow-up-primary.png);
+    background-image: url(../img/angle-arrow-up-primary.svg);
+    background-size: 100%;
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-left: 0;
+  }
+  .election-banner-button[aria-expanded=true]:hover::after {
+    background-image: url(../img/angle-arrow-up-primary-hover.png);
+    background-image: url(../img/angle-arrow-up-primary-hover.svg);
+  }
+  .election-banner-button[aria-expanded=true]::after {
+    background-position-y: 1px;
+  }
+}
+
+.election-banner-button[aria-expanded=true]::after {
+  position: absolute;
+  right: 1.5rem;
+  top: 2.15rem;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-button[aria-expanded=true]::after {
+    position: static;
+  }
+}
+
+.election-banner-button[aria-expanded=true] .election-banner-button-text {
+  display: none;
+}
+
+@media screen and (min-width: 481px) {
+  .election-banner-button[aria-expanded=true] .election-banner-button-text {
+    display: inline;
+  }
+}
+
+.election-banner-icon {
+  width: 3.8rem;
+}
+
+.election-footer .election-unstyled-list {
+  display: block;
+}
+
+.election-footer .election-footer-primary-link {
+  color: #212121;
+  display: block;
+  font-weight: 700;
+  margin-top: 0;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer .election-footer-primary-link {
+    border-top: none;
+  }
+}
+
+.election-footer .election-footer-primary-link:hover {
+  text-decoration: underline;
+}
+
+.election-footer a {
+  font-weight: normal;
+}
+
+.election-footer-return-to-top {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.election-footer-primary-section {
+  background-color: #f1f1f1;
+}
+
+.election-footer-primary-section .election-footer-primary-content {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-primary-section .election-footer-primary-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.election-footer-primary-section .election-footer-primary-content li {
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-primary-section .election-footer-primary-content li {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-primary-section .election-grid-full {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.election-footer-medium .election-footer-primary-section {
+  padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-medium .election-footer-primary-section {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .election-footer-medium .election-footer-primary-section .election-footer-primary-content {
+    margin-right: 6%;
+    width: inherit;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .election-footer-medium .election-footer-primary-section .election-footer-primary-content:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-medium .election-footer-nav ul {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.election-footer-slim .election-footer-nav a {
+  display: block;
+}
+
+@media screen and (min-width: 1201px) {
+  .election-footer-slim .election-footer-nav .election-footer-primary-content {
+    margin-right: 9%;
+    width: inherit;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .election-footer-slim .election-footer-nav .election-footer-primary-content:last-child {
+    margin-right: 0;
+  }
+}
+
+.election-footer-slim .election-footer-primary-section {
+  padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-slim .election-footer-primary-section {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  .election-footer-slim .election-footer-primary-section .election-grid-full {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-slim .election-footer-contact_info > * {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-slim .election-footer-contact_info {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-slim .election-footer-contact_info {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .election-footer-slim .election-footer-contact_info {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+  }
+  .election-footer-slim .election-footer-contact_info:last-child {
+    margin-right: 0;
+  }
+}
+
+ul.election-footer-primary-content,
+li.election-footer-primary-content,
+li.election-footer-primary-content {
+  border-top: 1px solid #212121;
+}
+
+@media screen and (min-width: 600px) {
+  ul.election-footer-primary-content,
+  li.election-footer-primary-content,
+  li.election-footer-primary-content {
+    border: none;
+  }
+}
+
+ul.election-footer-primary-content:last-child,
+li.election-footer-primary-content:last-child,
+li.election-footer-primary-content:last-child {
+  border-bottom: 1px solid #212121;
+}
+
+@media screen and (min-width: 600px) {
+  ul.election-footer-primary-content:last-child,
+  li.election-footer-primary-content:last-child,
+  li.election-footer-primary-content:last-child {
+    border-bottom: none;
+  }
+}
+
+.election-sign_up-block {
+  padding-bottom: 2rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-sign_up-block {
+    float: right;
+    padding: 0;
+  }
+}
+
+.election-sign_up-block label:first-of-type {
+  margin-top: 0;
+}
+
+.election-sign_up-block button {
+  float: none;
+  margin-right: 0;
+  margin-top: 1.5rem;
+}
+
+.election-sign_up-block input {
+  width: 100%;
+}
+
+.election-footer-secondary_section {
+  background-color: #d6d7d9;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.election-footer-secondary_section a {
+  color: #212121;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-big-secondary-section {
+    padding-top: 5rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-contact-links {
+    text-align: right;
+  }
+}
+
+.election-social-links a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-big .election-footer-primary-section {
+    padding-bottom: 4rem;
+    padding-top: 3rem;
+  }
+}
+
+.election-footer-big ul {
+  padding-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-big ul {
+    padding-bottom: 0;
+  }
+}
+
+.election-footer-big ul:last-child {
+  border-bottom: 1px solid #212121;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-big ul:last-child {
+    border-bottom: none;
+  }
+}
+
+.election-footer-big ul li {
+  line-height: 2em;
+}
+
+.election-footer-big ul .election-footer-primary-link {
+  background-image: url("../img/arrow-down.png");
+  background-image: url("../img/arrow-down.svg");
+  background-position: 1.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
+  margin-left: 0;
+  padding-left: 3.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-big ul .election-footer-primary-link {
+    background: none;
+    margin-bottom: .8rem;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+}
+
+.election-footer-big ul .election-footer-primary-link > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.election-footer-big ul.hidden {
+  padding-bottom: 0;
+}
+
+.election-footer-big ul.hidden li {
+  display: none;
+}
+
+.election-footer-big ul.hidden .election-footer-primary-link {
+  background-image: url("../img/arrow-right.png");
+  background-image: url("../img/arrow-right.svg");
+  cursor: pointer;
+  display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-big ul.hidden .election-footer-primary-link {
+    background: none;
+    padding-left: 0;
+  }
+}
+
+.election-footer-topic {
+  margin: 0;
+  padding: 2rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  .election-sign_up-header {
+    margin: 0;
+    padding: 2rem 0;
+  }
+}
+
+.election-footer-logo-img {
+  max-width: 14rem;
+}
+
+.election-footer-slim-logo-img {
+  float: left;
+  max-width: 10rem;
+}
+
+.election-footer-logo-heading {
+  margin-top: 2rem;
+}
+
+.election-footer-contact-heading {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-contact-heading {
+    margin-top: 1rem;
+  }
+}
+
+.election-footer-slim-logo-heading {
+  display: block;
+  padding-top: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-footer-slim-logo-heading {
+    display: inline-block;
+    padding-left: 1em;
+  }
+}
+
+.election-social_link, .election-link-facebook, .election-link-twitter, .election-link-youtube, .election-link-rss {
+  margin: 2.5rem 1rem 1.5rem 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 3rem;
+  display: inline-block;
+  height: 4.4rem;
+  left: -1.6rem;
+  position: relative;
+  text-align: center;
+  width: 4.4rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-social_link, .election-link-facebook, .election-link-twitter, .election-link-youtube, .election-link-rss {
+    margin: 0 0 0 1rem;
+    left: 1.2rem;
+  }
+}
+
+.election-social_link span, .election-link-facebook span, .election-link-twitter span, .election-link-youtube span, .election-link-rss span {
+  position: absolute;
+  left: -999em;
+}
+
+.election-link-facebook {
+  background-image: url("../img/social-icons/png/facebook25.png");
+  background-image: url("../img/social-icons/svg/facebook25.svg");
+}
+
+.election-link-twitter {
+  background-image: url("../img/social-icons/png/twitter16.png");
+  background-image: url("../img/social-icons/svg/twitter16.svg");
+}
+
+.election-link-youtube {
+  background-image: url("../img/social-icons/png/youtube15.png");
+  background-image: url("../img/social-icons/svg/youtube15.svg");
+}
+
+.election-link-rss {
+  background-image: url("../img/social-icons/png/rss25.png");
+  background-image: url("../img/social-icons/svg/rss25.svg");
+}
+
+form a {
+  border-bottom: 0;
+}
+
+form [type="submit"],
+form [type="submit"] {
+  display: block;
+  margin-bottom: 1.5em;
+  margin-top: 2.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  form [type="submit"],
+  form [type="submit"] {
+    padding-left: 2.7em;
+    padding-right: 2.7em;
+    width: auto;
+  }
+}
+
+form [name="password"],
+form [name="confirmPassword"] {
+  margin-bottom: 1.1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-form {
+    max-width: 32rem;
+  }
+}
+
+.election-form-note {
+  float: right;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.election-form-note + * {
+  clear: both;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .election-form-large {
+    max-width: 46rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  input.election-input-tiny {
+    max-width: 6rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  input.election-input-medium {
+    max-width: 12rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-input-grid {
+    padding-right: 5%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-input-grid:last-of-type {
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-input-grid-small {
+    float: left;
+    width: 35%;
+  }
+}
+
+.election-input-grid-small input {
+  margin-bottom: 3rem;
+}
+
+.election-input-grid-small select {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-input-grid-medium {
+    float: left;
+    width: 65%;
+  }
+}
+
+.election-input-grid-medium input {
+  margin-bottom: 3rem;
+}
+
+.election-input-grid-medium select {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-input-grid-large {
+    float: left;
+    width: 100%;
+  }
+}
+
+.election-input-grid-large input {
+  margin-bottom: 3rem;
+}
+
+.election-input-grid-large select {
+  margin-bottom: 3rem;
+}
+
+.election-additional_text {
+  float: right;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.election-checklist {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.election-checklist li {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 3em;
+  text-indent: -2em;
+}
+
+.election-checklist li::before {
+  content: ' ';
+  display: inline-block;
+  height: .8em;
+  margin-right: .2em;
+  width: 1.8em;
+}
+
+.election-checklist-checked::before {
+  background-image: url("../img/correct9.png");
+  background-image: url("../img/correct9.svg");
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.election-graphic_list .election-graphic_list-row .election-media_block {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-graphic_list .election-graphic_list-row .election-media_block {
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .election-graphic_list .election-graphic_list-row:last-child .election-media_block {
+    margin-bottom: 0;
+  }
+}
+
+.election-graphic_list .election-graphic_list-row:last-child .election-media_block:last-child {
+  margin-bottom: 0;
+}
+
+.election-graphic_list .election-media_block-img {
+  margin-right: 3rem;
+}
+
+.election-graphic_list .election-media_block-body > :first-child {
+  margin-top: 0;
+}
+
+.election-hero {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-image: url("../img/hero.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.election-hero .election-button {
+  color: #ffffff;
+}
+
+.election-section-dark .election-hero-link {
+  color: #02bfe7;
+}
+
+.election-hero-callout {
+  background-color: #112e51;
+  padding: 3rem;
+}
+
+@media screen and (min-width: 481px) {
+  .election-hero-callout {
+    max-width: 30rem;
+  }
+}
+
+.election-hero-callout > *:first-child {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.election-hero-callout .election-button {
+  font-size: 1.4rem;
+  margin-top: 7rem;
+  width: 100%;
+}
+
+.election-hero-callout-alt {
+  color: #ffffff;
+  display: block;
+}
+
+.election-layout-docs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1201px) {
+  .election-layout-docs {
+    display: inherit;
+  }
+}
+
+.election-layout-docs .election-grid > :first-child:not(.election-width-*) {
+  margin-top: 0;
+}
+
+.election-layout-docs .election-grid > :last-child:not(.election-width-*) {
+  margin-bottom: 0;
+}
+
+.election-layout-docs-sidenav {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.election-layout-docs-main_content {
+  margin-bottom: 3rem;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+@media screen and (min-width: 1201px) {
+  .election-layout-docs-main_content {
+    margin-bottom: 0;
+  }
+}
+
+.election-layout-docs-main_content > :first-child {
+  margin-top: 0;
+}
+
+.election-media_block-img {
+  float: left;
+  margin-right: 1rem;
+}
+
+.election-media_block-body {
+  overflow: hidden;
+}
+
+.election-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media screen and (min-width: 600px) {
+  .election-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.election-section-light {
+  background-color: #f1f1f1;
+}
+
+.election-section-dark {
+  background-color: #112e51;
+  color: #ffffff;
+}
+
+.election-section-dark h1,
+.election-section-dark h2,
+.election-section-dark h3,
+.election-section-dark h4,
+.election-section-dark h5,
+.election-section-dark h6 {
+  color: #02bfe7;
+}
+
+.election-section-dark p {
+  color: #ffffff;
+}
+
+.election-section-dark a {
+  color: #d6d7d9;
+}
+
+.election-section-dark a:hover {
+  color: #ffffff;
+}
+
+.election-sidenav-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.election-sidenav-list > li {
+  margin-bottom: 0;
+}
+
+.election-sidenav-list > li {
+  background-color: transparent;
+  border-top: 1px solid #5b616b;
+  font-size: 1.7rem;
+}
+
+.election-sidenav-list > li:first-child {
+  border-top: none;
+}
+
+.election-sidenav-list a {
+  border: none;
+  color: #212121;
+  display: block;
+  font-family: "nta", Arial, sans-serif;
+  line-height: 1.3;
+  padding: 0.85rem 1rem 0.85rem 1.8rem;
+  text-decoration: none;
+}
+
+.election-sidenav-list a:hover {
+  background-color: #f1f1f1;
+  color: #0071bc;
+  text-decoration: none;
+}
+
+.election-sidenav-list a:focus {
+  position: relative;
+  z-index: 1;
+}
+
+.election-sidenav-list a.election-current {
+  border-left: 4px solid #0071bc;
+  color: #0071bc;
+  font-weight: 700;
+  padding-left: 1.4rem;
+}
+
+.election-sidenav-sub_list {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.election-sidenav-sub_list > li {
+  margin-bottom: 0;
+}
+
+.election-sidenav-sub_list li {
+  border: none;
+  font-size: 1.5rem;
+}
+
+.election-sidenav-sub_list a {
+  padding-left: 2.8rem;
+  line-height: 1.3;
+}
+
+.election-sidenav-sub_list a:hover, .election-sidenav-sub_list a.election-current {
+  border: none;
+  padding-left: 2.8rem;
+}
+
+.election-sidenav-sub_list .election-sidenav-sub_list a {
+  padding-left: 3.8rem;
+}
+
+.election-sidenav-sub_list .election-sidenav-sub_list a:hover {
+  padding-left: 3.8rem;
+}
+
+.election-header {
+  width: 100%;
+  z-index: 7000;
+}
+
+@media screen and (min-width: 951px) {
+  .election-header {
+    border-bottom: 1px solid #aeb0b5;
+  }
+}
+
+.election-header a {
+  border-bottom: none;
+}
+
+.election-header .election-search {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 951px) {
+  .election-header .election-search {
+    float: right;
+    margin-bottom: 0;
+    max-width: 21.5rem;
+  }
+}
+
+.election-navbar {
+  border-bottom: 1px solid #aeb0b5;
+  height: 4rem;
+}
+
+@media screen and (min-width: 951px) {
+  .election-navbar {
+    border-bottom: none;
+    display: inline-block;
+    height: 10.3rem;
+  }
+}
+
+.election-logo {
+  float: left;
+  line-height: 4rem;
+  margin-left: 1.5rem;
+}
+
+@media screen and (min-width: 951px) {
+  .election-logo {
+    line-height: 7.5rem;
+    margin-left: 0;
+  }
+}
+
+.election-logo a {
+  color: #212121;
+  text-decoration: none;
+}
+
+.election-logo br {
+  display: none;
+}
+
+@media screen and (min-width: 951px) {
+  .election-logo br {
+    display: block;
+  }
+}
+
+.election-logo-text {
+  display: block;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+}
+
+@media screen and (min-width: 951px) {
+  .election-logo-text {
+    display: block;
+    font-size: 2.4rem;
+    line-height: 1.3;
+  }
+}
+
+.election-menu-btn {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  background-color: #0071bc;
+  color: #ffffff;
+  display: inline;
+  float: right;
+  font-size: 1.3rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 5.8rem;
+}
+
+.election-menu-btn:hover {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 951px) {
+  .election-menu-btn {
+    display: none;
+  }
+}
+
+.election-menu-btn:hover {
+  color: #ffffff;
+  background-color: #205493;
+}
+
+.election-menu-btn:visited {
+  color: #ffffff;
+}
+
+.election-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  z-index: 8000;
+}
+
+.election-overlay.is-visible {
+  opacity: 0.1;
+  visibility: visible;
+}
+
+.election-nav-link {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-link:hover span {
+    border-bottom: 0.7rem solid #0071bc;
+    padding-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    max-width: 1040px;
+  }
+  .election-nav-container::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+.election-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  height: 100%;
+  width: 26rem;
+  -webkit-transform: translateX(26rem);
+  -ms-transform: translateX(26rem);
+  transform: translateX(26rem);
+  background: #ffffff;
+  border-left: 1px solid #aeb0b5;
+  border-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 2rem;
+  z-index: 9000;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav {
+    padding-top: 5rem;
+    padding-right: 0;
+    padding-bottom: 0;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    border-left: none;
+    display: block;
+    float: right;
+    overflow-y: visible;
+    position: relative;
+    width: auto;
+  }
+}
+
+.election-nav.is-visible {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.election-nav nav {
+  margin-top: 6rem;
+  min-height: 100%;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav nav {
+    margin-top: 0;
+  }
+}
+
+.election-nav .election-current {
+  border-left: 4px solid #0071bc;
+  color: #0071bc;
+  font-weight: 700;
+  padding-left: 1.4rem;
+}
+
+.election-nav .election-button {
+  width: 100%;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav .election-search {
+    margin-left: 1.5rem;
+  }
+}
+
+.election-nav-primary {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.election-nav-primary > li {
+  margin-bottom: 0;
+}
+
+.election-nav-primary > li {
+  background-color: transparent;
+  border-top: 1px solid #5b616b;
+  font-size: 1.7rem;
+}
+
+.election-nav-primary > li:first-child {
+  border-top: none;
+}
+
+.election-nav-primary a {
+  border: none;
+  color: #212121;
+  display: block;
+  font-family: "nta", Arial, sans-serif;
+  line-height: 1.3;
+  padding: 0.85rem 1rem 0.85rem 1.8rem;
+  text-decoration: none;
+}
+
+.election-nav-primary a:hover {
+  background-color: #f1f1f1;
+  color: #0071bc;
+  text-decoration: none;
+}
+
+.election-nav-primary a:focus {
+  position: relative;
+  z-index: 1;
+}
+
+.election-nav-primary a.election-current {
+  border-left: 4px solid #0071bc;
+  color: #0071bc;
+  font-weight: 700;
+  padding-left: 1.4rem;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary li {
+    border-top: none;
+  }
+}
+
+.election-nav-primary > li {
+  width: auto;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary > li {
+    display: inline-block;
+    margin-left: -4px;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary > li > a {
+    padding: 1.3rem 1.5rem 1.7rem;
+    color: #5b616b;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary > li > a:hover {
+    background-color: transparent;
+  }
+}
+
+.election-nav-primary button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  padding: 1.4rem 1.5rem 1rem 1.8rem;
+}
+
+.election-nav-primary button:hover {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary button {
+    padding-right: 3rem;
+    padding-bottom: 1.9rem;
+    padding-left: 1.5rem;
+    color: #5b616b;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: initial;
+  }
+}
+
+.election-nav-primary button:focus, .election-nav-primary button:active {
+  box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+}
+
+.election-nav-primary button:hover {
+  background-color: #f1f1f1;
+  color: #0071bc;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary button:hover {
+    background-color: transparent;
+  }
+}
+
+.election-nav-primary button[aria-expanded=false] {
+  background-image: url("../img/plus-alt.png");
+  background-image: url("../img/plus-alt.svg");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 1rem;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary button[aria-expanded=false] {
+    background-image: url("../img/angle-arrow-down.png");
+    background-image: url("../img/angle-arrow-down.svg");
+    background-position: right 1.5rem top 44%;
+  }
+}
+
+.election-nav-primary button[aria-expanded=true] {
+  background-image: url("../img/minus-alt.png");
+  background-image: url("../img/minus-alt.svg");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 1rem;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-primary button[aria-expanded=true] {
+    background-color: #112e51;
+    color: #ffffff;
+    background-image: url("../img/angle-arrow-down-hover.png");
+    background-image: url("../img/angle-arrow-down-hover.svg");
+    background-position: right 1.5rem top 44%;
+  }
+  .election-nav-primary button[aria-expanded=true]:hover {
+    background-color: #112e51;
+  }
+  .election-nav-primary button[aria-expanded=true] span {
+    border-bottom: 0.7rem solid #0071bc;
+    padding-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-basic .election-logo {
+    bottom: 1.9rem;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-basic .election-navbar {
+    position: relative;
+    width: 18%;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-header {
+    border-bottom: none;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-logo {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended em {
+    font-size: 3.2rem;
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-navbar {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    display: block;
+    height: auto;
+    max-width: 1040px;
+  }
+  .election-header-extended .election-navbar::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-nav {
+    border-top: 1px solid #aeb0b5;
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-nav-inner {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3rem;
+    padding-left: 2rem;
+    margin-top: -1px;
+    max-width: 1040px;
+    position: relative;
+  }
+  .election-header-extended .election-nav-inner::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-nav-primary::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-nav-primary button[aria-expanded=false], .election-header-extended .election-nav-primary button[aria-expanded=true] {
+    background-position: right 1.5rem top 50%;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-nav-link {
+    padding-top: 1.9rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-nav-submenu .election-grid-full {
+    padding-left: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-extended .election-megamenu {
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-secondary {
+    position: absolute;
+    right: 3rem;
+    top: -5.7rem;
+  }
+}
+
+.election-nav-secondary .election-search {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-secondary .election-search {
+    margin-top: -0.2rem;
+    margin-bottom: 0;
+    margin-left: 0;
+    display: none;
+    float: left;
+  }
+  .election-nav-secondary .election-search.is-visible {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-secondary-links {
+    float: left;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-secondary-links li {
+    display: inline;
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-secondary-links li:not(:last-child)::after {
+    content: '|';
+    padding-left: 1rem;
+  }
+}
+
+.election-nav-secondary-links a,
+.election-nav-secondary-links .election-header-search-button {
+  color: #5b616b;
+  display: inline-block;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.election-nav-secondary-links a:hover,
+.election-nav-secondary-links .election-header-search-button:hover {
+  color: #0071bc;
+}
+
+.election-nav-secondary-links .election-header-search-button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  display: none;
+}
+
+.election-nav-secondary-links .election-header-search-button:hover {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-secondary-links .election-header-search-button {
+    background-image: url("../img/search-alt.png");
+    background-image: url("../img/search-alt.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 2.2rem;
+    display: inline-block;
+    padding-left: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-secondary-links .election-header-search-button.is-hidden {
+    display: none;
+  }
+}
+
+.election-nav-submenu {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.election-nav-submenu > li {
+  margin-bottom: 0;
+}
+
+.election-nav-submenu li {
+  border: none;
+  font-size: 1.5rem;
+}
+
+.election-nav-submenu a {
+  padding-left: 2.8rem;
+  line-height: 1.3;
+}
+
+.election-nav-submenu a:hover, .election-nav-submenu a.election-current {
+  border: none;
+  padding-left: 2.8rem;
+}
+
+.election-nav-submenu .election-sidenav-sub_list a {
+  padding-left: 3.8rem;
+}
+
+.election-nav-submenu .election-sidenav-sub_list a:hover {
+  padding-left: 3.8rem;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-submenu {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 1.15rem;
+    padding-bottom: 1.15rem;
+    background-color: #112e51;
+    min-width: 21.5rem;
+    width: auto;
+    position: absolute;
+  }
+  .election-nav-submenu > li {
+    margin-bottom: 0;
+  }
+}
+
+.election-nav-submenu[aria-hidden=true] {
+  display: none;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-submenu a {
+    color: #ffffff;
+    padding-left: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-submenu a:hover {
+    background-color: #112e51;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-submenu a:hover, .election-nav-submenu a.election-current {
+    padding-left: 1.8rem;
+  }
+}
+
+.election-nav-submenu li {
+  margin-bottom: 0;
+}
+
+.election-nav-close {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  margin: -1.2rem -1.5rem 2.4rem auto;
+  float: right;
+  height: 4.4rem;
+  text-align: center;
+  width: 4.4rem;
+}
+
+.election-nav-close:hover {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 951px) {
+  .election-nav-close {
+    display: none;
+  }
+}
+
+.election-nav-close img {
+  width: 1.3rem;
+}
+
+.election-mobile_nav-active {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 951px) {
+  .election-megamenu {
+    padding-top: 3.15rem;
+    padding-bottom: 3.15rem;
+    left: -1.8rem;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-megamenu::before {
+    background-color: #112e51;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 1000%;
+    right: 100%;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-megamenu::after {
+    background-color: #112e51;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 1000%;
+    left: 100%;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-basic-megamenu .election-nav {
+    padding-top: 0;
+    width: 100%;
+  }
+}
+
+.election-header-basic-megamenu .election-nav-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-basic-megamenu .election-nav-inner {
+    display: initial;
+    float: right;
+    margin-top: -4.8rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-header-basic-megamenu .election-nav-submenu .election-grid-full {
+    margin-left: -1.8rem;
+  }
+}
+
+@media screen and (min-width: 951px) {
+  .election-megamenu-col {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  .election-megamenu-col:last-child {
+    margin-right: 0;
+  }
+  .election-megamenu-col:nth-child(2n) {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  .election-megamenu-col:nth-child(2n):last-child {
+    margin-right: 0;
+  }
+  .election-megamenu-col:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+.election-megamenu-col > ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.election-megamenu-col > ul > li {
+  margin-bottom: 0;
+}
+
+.election-search {
+  max-width: none;
+  position: relative;
+}
+
+.election-search::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.election-search [type="search"],
+.election-search .election-search-input {
+  padding-top: 0;
+  padding-bottom: 0;
+  -webkit-appearance: none;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  border-top-right-radius: 0;
+  box-sizing: border-box;
+  float: left;
+  font-size: 1.4rem;
+  height: 40px;
+  margin: 0;
+  width: calc(100% - 4.5rem);
+}
+
+@media screen and (min-width: 481px) {
+  .election-search [type="search"],
+  .election-search .election-search-input {
+    width: calc(100% - 8.5rem);
+  }
+}
+
+.election-search [type="submit"],
+.election-search .election-search-submit {
+  background-image: url("../img/search.png");
+  background-image: url("../img/search.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  width: 4.5rem;
+}
+
+@media screen and (min-width: 481px) {
+  .election-search [type="submit"],
+  .election-search .election-search-submit {
+    background-image: none;
+    width: 8.5rem;
+  }
+}
+
+.election-search .election-search-submit-text {
+  display: none;
+}
+
+@media screen and (min-width: 481px) {
+  .election-search .election-search-submit-text {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .election-search.election-search-big [type="search"],
+  .election-search.election-search-big .election-search-input {
+    font-size: 1.7rem;
+    height: 4.4rem;
+    width: calc(100% - 11.6rem);
+  }
+  .election-search.election-search-big [type="submit"],
+  .election-search.election-search-big .election-search-submit {
+    font-size: 2rem;
+    height: 4.4rem;
+    width: 11.6rem;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .election-search.election-search-small [type="search"],
+  .election-search.election-search-small .election-search-input {
+    width: calc(100% - 4.5rem);
+  }
+  .election-search.election-search-small [type="submit"],
+  .election-search.election-search-small .election-search-submit {
+    background-image: url("../img/search.png");
+    background-image: url("../img/search.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    width: 4.5rem;
+  }
+}
+
+.election-skipnav {
+  background: transparent;
+  color: #212121;
+  left: 0;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: -4.2rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+}
+
+.election-skipnav:focus {
+  background: #ffffff;
+  left: 0;
+  outline: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
