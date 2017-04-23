@@ -17,6 +17,27 @@ def profile(request, slug, district, politicaldiv):
     context = {'title': infor.name}
     return render(request,template_name,context)
 
+def explore(request):
+    template_name = 'explore.html'
+    infor = District.objects.all()
+    context = {'title': 'Find Candidates', 'subtitle':'Discover everything election!','infor':infor}
+    return render(request,template_name,context)
+
+def district(request, name):
+    template_name = 'district.html'
+    dis = get_object_or_404(District, name=name)
+    infor = Politicaldiv.objects.all()
+    context = {'title': dis.name, 'subtitle':'Discover everything election!','infor':infor,'dis':dis}
+    return render(request,template_name,context)
+
+def politicaldiv(request, name, name2):
+    template_name = 'politicaldiv.html'
+    dis = get_object_or_404(District, name=name)
+    location = get_object_or_404(Politicaldiv, name=name2)
+    infor = Candidate.objects.all()
+    context = {'title': location.name, 'subtitle':'Discover everything election!','infor':infor,'dis':dis,'location':location}
+    return render(request,template_name,context)
+
 def post(request, slug):
     template_name = 'post.html'
     post = get_object_or_404(Post, slug=slug)

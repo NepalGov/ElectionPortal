@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from e2074.views import profile,home,signup,wpadmin,wpzone,wpdistrict,wppoliticaldiv,post,wppost,profile
+from e2074.views import profile,home,signup,wpadmin,wpzone,wpdistrict,wppoliticaldiv,post,wppost,profile,explore,district,politicaldiv
 from django.contrib.auth.views import login,logout
 
 urlpatterns = [
@@ -31,9 +31,13 @@ urlpatterns = [
     url(r'^wp-admin/zone/$', wpzone, name='wpzone'),
     url(r'^wp-admin/district/$', wpdistrict, name='wpdistrict'),
     url(r'^wp-admin/politicaldiv/$', wppoliticaldiv, name='wppoliticaldiv'),
+    url(r'^explore/$', explore, name='explore'),
+    url(r'^explore/(?P<name>[\w-]+)/$', district, name='district'),
+    url(r'^explore/(?P<name>[\w-]+)/(?P<name2>[\w-]+)/$', politicaldiv, name='politicaldiv'),
     url(r'^(?P<slug>[\w-]+)/$', post, name='post'),
     url(r'^wp-admin/post/$', wppost, name='wppost'),
     url(r'^(?P<district>[\w-]+)/(?P<politicaldiv>[\w-]+)/(?P<slug>[\w-]+)/$', profile, name='profile'),
+
 
 
 ]

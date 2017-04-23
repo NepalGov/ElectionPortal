@@ -1,0 +1,3 @@
+{% for infor in infor %}{% if dis.id == infor.district.id %}
+<a href="{% url 'politicaldiv' dis.name infor.name %}">{{ infor.name }}</a>
+{% endif %}{% endfor %}
