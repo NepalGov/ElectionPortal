@@ -48,7 +48,6 @@ class Candidate(models.Model):
 
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True)
-    birth = models.DateField()
     party = models.ForeignKey(Party)
     zone = models.ForeignKey(Zone)
     district = models.ForeignKey(District)
@@ -68,7 +67,7 @@ class Candidate(models.Model):
     status = models.CharField(max_length=1, choices=VOTE_STATUS)
     age = models.IntegerField()
     criminalcase = models.IntegerField()
-    photo = models.ImageField(upload_to='images')
+    photo = models.ImageField(upload_to='images', null=True, blank=True)
     about = models.TextField()
 
     def __str__(self):

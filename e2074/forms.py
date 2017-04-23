@@ -1,5 +1,5 @@
 from django import forms
-from .models import Feedback, Zone, District, Politicaldiv, Post
+from .models import Feedback, Zone, District, Politicaldiv, Post, Candidate
 
 class FeedbackForm(forms.ModelForm):
     class Meta:
@@ -14,9 +14,14 @@ class WpZoneForm(forms.ModelForm):
 class WpDistrictForm(forms.ModelForm):
     class Meta:
         model = District
-        fields = {'name','zone'}
+        fields = {'name','zone','vdc','municipality','population','voters'}
 
 class WpPoliticaldivForm(forms.ModelForm):
     class Meta:
         model = Politicaldiv
         fields = {'zone','district','name','group'}
+
+class WpCandidateForm(forms.ModelForm):
+    class Meta:
+        model = Candidate
+        fields = {'name','party','zone','district','politicaldiv','gender','votes','status','age','criminalcase','photo','about'}

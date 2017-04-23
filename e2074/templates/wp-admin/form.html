@@ -2,6 +2,61 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include 'include/admin/head.html' %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+
+        $("select[name='zone']").change(function(){
+            var value =  $(this).val();
+            var pselect = $("select[name='district']");
+
+            $.ajax({
+                method:"get",
+                dataType:"json",
+                url:'/suggest/district/',
+                data:{
+                'zone':value
+                },
+                success:function(data){
+                    pselect.empty();
+                    $.each(data, function(index, value){
+                        pselect.append("<option value='"+value.pk+"'>"+value.name+"</option>");
+                    });
+                },
+
+            });
+        });
+
+    });
+    </script>
+  <script>
+
+    $(document).ready(function(){
+
+        $("select[name='district']").change(function(){
+            var value =  $(this).val();
+            var pselect = $("select[name='politicaldiv']");
+
+            $.ajax({
+                method:"get",
+                dataType:"json",
+                url:'/suggest/politicaldiv/',
+                data:{
+                'district':value
+                },
+                success:function(data){
+                    pselect.empty();
+                    $.each(data, function(index, value){
+                        pselect.append("<option value='"+value.pk+"'>"+value.name+"</option>");
+                    });
+                },
+
+            });
+        });
+
+    });
+  </script>
 <body>
 
 <div id="wrapper">
