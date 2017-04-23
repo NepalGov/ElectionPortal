@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404, redirect
 
 # Create your views here.
 
-from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv
+from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv, Party
 from .forms import FeedbackForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -20,14 +20,14 @@ def profile(request, slug, district, politicaldiv):
 def explore(request):
     template_name = 'explore.html'
     infor = District.objects.all()
-    context = {'title': 'Find Candidates', 'subtitle':'Discover everything election!','infor':infor}
+    context = {'title': 'Find Candidates', 'subtitle':'Election Portal','infor':infor}
     return render(request,template_name,context)
 
 def district(request, name):
     template_name = 'district.html'
     dis = get_object_or_404(District, name=name)
     infor = Politicaldiv.objects.all()
-    context = {'title': dis.name, 'subtitle':'Discover everything election!','infor':infor,'dis':dis}
+    context = {'title': dis.name, 'subtitle':'Election Portal','infor':infor,'dis':dis}
     return render(request,template_name,context)
 
 def politicaldiv(request, name, name2):
@@ -35,13 +35,36 @@ def politicaldiv(request, name, name2):
     dis = get_object_or_404(District, name=name)
     location = get_object_or_404(Politicaldiv, name=name2)
     infor = Candidate.objects.all()
-    context = {'title': location.name, 'subtitle':'Discover everything election!','infor':infor,'dis':dis,'location':location}
+    context = {'title': location.name, 'subtitle':'Election Portal','infor':infor,'dis':dis,'location':location}
+    return render(request,template_name,context)
+
+def parties(request):
+    template_name = 'parties.html'
+    infor = Party.objects.all()
+    context = {'title': 'Parties', 'subtitle':'Election Portal','infor':infor}
+    return render(request,template_name,context)
+
+def candidates(request):
+    template_name = 'candidates.html'
+    infor = Candidate.objects.all()
+    context = {'title': 'Candidates', 'subtitle':'Election Portal','infor':infor}
+    return render(request,template_name,context)
+
+def getinvolved(request):
+    template_name = 'getinvolved.html'
+    context = {'title': 'Get Involved', 'subtitle':'Election Portal'}
+    return render(request,template_name,context)
+
+def partyprofile(request, slug):
+    template_name = 'partyprofile.html'
+    infor = get_object_or_404(Party, slug=slug)
+    context = {'title': infor.name, 'subtitle':'Election Portal','infor':infor}
     return render(request,template_name,context)
 
 def post(request, slug):
     template_name = 'post.html'
     post = get_object_or_404(Post, slug=slug)
-    context = {'title': post.title, 'subtitle':'Discover everything election!','post':post}
+    context = {'title': post.title, 'subtitle':'Election Portal','post':post}
     return render(request,template_name,context)
 
 def home(request):

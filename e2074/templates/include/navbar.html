@@ -9,10 +9,10 @@
       <a id="nav-toggle-button" href="javascript:void(0);">&#9776;</a>
     </div>
     <ul class="nav-list election-unstyled-list">
-      <li><a href="#">Explore</a></li>
-      <li><a href="#">Parties</a></li>
-	    <li><a href="#">Candidates</a></li>
-      <li><a href="#">Get Involved</a></li>
+      <li><a href="{% url 'explore' %}">Explore</a></li>
+      <li><a href="{% url 'parties' %}">Parties</a></li>
+	    <li><a href="{% url 'candidates' %}">Candidates</a></li>
+      <li><a href="{% url 'getinvolved' %}">Get Involved</a></li>
     </ul>
   </div>
 </nav>

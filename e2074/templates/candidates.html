@@ -1,0 +1,3 @@
+{% for infor in infor %}
+<a href="{% url 'profile' infor.district infor.politicaldiv infor.slug %}">{{ infor.name }}</a>
+{% endfor %}
