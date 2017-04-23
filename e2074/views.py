@@ -11,9 +11,9 @@ from .forms import FeedbackForm, WpZoneForm, WpDistrictForm, WpPoliticaldivForm,
 from django.utils.text import slugify
 
 
-def profile(request, slug):
+def profile(request, slug, district, politicaldiv):
     template_name = 'profile.html'
-    infor = get_object_or_404(Candidate, slug=slug)
+    infor = get_object_or_404(Candidate, slug=slug, district__name=district, politicaldiv__name=politicaldiv)
     context = {'title': infor.name}
     return render(request,template_name,context)
 

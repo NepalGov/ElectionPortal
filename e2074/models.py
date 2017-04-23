@@ -24,7 +24,7 @@ class Politicaldiv(models.Model):
         ('1', 'Municipality'),
         ('2', 'Vdc'),
     )
-    group = models.IntegerField(choices=MUNICI_VDC)
+    group = models.CharField(max_length=1, choices=MUNICI_VDC)
 
     def __str__(self):
         return self.name

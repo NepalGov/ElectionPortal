@@ -1,12 +1,4 @@
----
-layout: base
-description: >
-  This layout is used by the individual team member profile pages.
----
 
-<div class="election-grid">
-  <p><a href="{{ '/team' | prepend: site.baseurl }}">&laquo; All team members</a></p>
-</div>
 
 <div class="team-member">
   <div class="election-grid">
@@ -17,7 +9,7 @@ description: >
       {% else %}
         <img src="{{ site.baseurl }}/img/ng_logo.png" alt="Placeholder Government of Nepal logo since {{ page.firstname }} {{ page.lastname }} does not have a photo yet">
       {% endif %}
-	  
+
 	  <h3>Content</h3>
 	              <ul class="dashed">
             <li>&nbsp;&nbsp;<a href="#biography">Biography</a></li>
@@ -26,7 +18,7 @@ description: >
               {% if page.personal %}<li>&nbsp;&nbsp;<a href="#personal">Personal</a></li>{% endif %}
 			  {% if page.campaign %}<li>&nbsp;&nbsp;<a href="#campaign">Campaign</a></li>{% endif %}
           </ul>
-	  
+
     </div>
     <div class="election-width-two-thirds">
       <h2 id="biography">Biography</h1><div class="bio">{{ page.bio }}</div>
