@@ -6,7 +6,7 @@ from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv, Party
 from .forms import FeedbackForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from .forms import FeedbackForm, WpZoneForm, WpDistrictForm, WpPoliticaldivForm, WpPostForm
+from .forms import FeedbackForm, WpZoneForm, WpDistrictForm, WpPoliticaldivForm
 
 from django.utils.text import slugify
 
@@ -14,7 +14,7 @@ from django.utils.text import slugify
 def profile(request, slug, district, politicaldiv):
     template_name = 'profile.html'
     infor = get_object_or_404(Candidate, slug=slug, district__name=district, politicaldiv__name=politicaldiv)
-    context = {'title': infor.name}
+    context = {'title': infor.name, 'subtitle':'Election Portal','infor':infor}
     return render(request,template_name,context)
 
 def explore(request):
@@ -141,20 +141,4 @@ def wppoliticaldiv(request):
     template_name = 'wp-admin/form.html'
     items = Politicaldiv.objects.all()
     context = {'title':'Add Political Division','form':form,'items':items,'message':'You Should Add Required Zone and Districts Before'}
-    return render (request, template_name, context)
-
-def wppost(request):
-    if request.method == 'POST':
-        form = WpPostForm(request.POST)
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.auther = request.user
-            form.slug = slugify(form.title)
-            form.save()
-            return redirect(wppost)
-    else:
-        form = WpPostForm()
-    template_name = 'wp-admin/form.html'
-    items = Post.objects.all()
-    context = {'title':'Add Post/Article','form':form,'items':items,'message':'Select home 1 or 2 or 3 to make these post shown in hoempage'}
     return render (request, template_name, context)

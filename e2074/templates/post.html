@@ -1,11 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/head.html' %}
+  <body>
 
-<br/>
+    {% include 'include/navbar.html' %}
+
+    <div class="page-content">
+      <div class="election-grid"><br/>
 <div class="thdc-grid">
   <div class="thdc-whole-page">
-    <h1 style="text-align:center;">{{ post.title }}</h1>
-    <p style="text-align:center;">{{ post.published }} • {{ post.author }}</p><br/><br/>
+    <h1 style="text-align:center;">{{ post.title | title }}</h1>
+    <p style="text-align:center;">{{ post.posted }} • {{ post.auther | title  }}</p><br/><br/>
     <article>
         {{ post.content }}
     </article>
   </div>
 </div>
+</div>
+    </div>
+
+{% include 'include/extended_footer.html' %}
+
+{% include 'include/footer.html' %}
+{% include 'include/script.html' %}
+</body>
+</html>

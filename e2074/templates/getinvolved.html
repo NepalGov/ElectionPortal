@@ -1,3 +1,20 @@
-Hello thanks for your interest on helping up! you can Signup here and help us
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/head.html' %}
+  <body>
+
+    {% include 'include/navbar.html' %}
+
+    <div class="page-content">
+      <div class="election-grid">Hello thanks for your interest on helping up! you can Signup here and help us
 <a href="{% url 'signup' %}">Signup</a>. If you have Skills on Django, Python, or any to support on this project you can help us in GitHub
-<a href="https://github.com/NepalGov/ElectionPortal">https://github.com/NepalGov/ElectionPortal</a>.
+<a href="https://github.com/NepalGov/ElectionPortal">https://github.com/NepalGov/ElectionPortal</a>.</div>
+    </div>
+
+{% include 'include/extended_footer.html' %}
+
+{% include 'include/footer.html' %}
+{% include 'include/script.html' %}
+</body>
+</html>

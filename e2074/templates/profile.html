@@ -1,36 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/head.html' %}
+  <body>
 
+    {% include 'include/navbar.html' %}
 
-<div class="team-member">
-  <div class="election-grid">
-    <h1>{{ page.firstname }} {{ page.lastname }}</h1> <br />
-    <div class="election-width-one-third">
-      {% if page.photo %}
-        <img src="{{ site.baseurl }}/img/candidate/profile/{{ page.photo }}" alt="Photo of {{ page.firstname }} {{ page.lastname }}">
-      {% else %}
-        <img src="{{ site.baseurl }}/img/ng_logo.png" alt="Placeholder Government of Nepal logo since {{ page.firstname }} {{ page.lastname }} does not have a photo yet">
-      {% endif %}
+    <div class="page-content">
+      <div class="election-grid">
+        <div class="team-member">
+          <div class="election-grid">
+            <h1>{{ infor.name | title }}</h1> <br />
+            <div class="election-width-one-third">
+              {% if infor.photo %}
+                <img src="{{ infor.photo.url}}" alt="Photo of {{ infor.name | title }}">
+              {% else %}
+                <img src="{{ infor.photo.url}}" alt="Placeholder Government of Nepal logo since {{ infor.name | title }} does not have a photo yet">
+              {% endif %}
 
-	  <h3>Content</h3>
-	              <ul class="dashed">
-            <li>&nbsp;&nbsp;<a href="#biography">Biography</a></li>
-              {% if page.education %}<li>&nbsp;&nbsp;<a href="#education">Education</a></li>{% endif %}
-              {% if page.career %}<li>&nbsp;&nbsp;<a href="#career">Career</a></li>{% endif %}
-              {% if page.personal %}<li>&nbsp;&nbsp;<a href="#personal">Personal</a></li>{% endif %}
-			  {% if page.campaign %}<li>&nbsp;&nbsp;<a href="#campaign">Campaign</a></li>{% endif %}
-          </ul>
+        	  <h3>Content</h3>
+	              <ul class="election-unstyled-list">
+                  <li>Zone:-{{ infor.zone | title }}</li>
+                  <li>District:-{{ infor.district | title }}</li>
+                  <li>Gender:-{{ infor.gender }}</li>
+                  <li>Age:-{{ infor.age }}</li>
+                  <li>Criminalcase:-{{ infor.criminalcase }}</li>
+                </ul>
 
+            </div>
+            <div class="election-width-two-thirds">
+              <h2 id="biography">Biography</h2>
+                <div class="bio">{{ infor.about }}</div>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="election-width-two-thirds">
-      <h2 id="biography">Biography</h1><div class="bio">{{ page.bio }}</div>
-      {% if page.education %}<h2 id="education">Education</h2><div class="bio">{{ page.education }}</div>{% endif %}
-	 {% if page.career %}<h2 id="career">Career</h2><div class="career">{{ page.career }}</div>{% endif %}
-      {% if page.personal %}<h2 id="personal">Personal</h2><div class="personal">{{ page.personal }}</div>{% endif %}
-      {% if page.campaign %}<h2 id="campaign">Campaign</h2><div class="campaign">{{ page.campaign }}</div>{% endif %}
-    </div>
-  </div>
-  <div class="election-grid">
-    <div class="election-width-one-whole">
-      {{ content }}
-    </div>
-  </div>
-</div>
+
+{% include 'include/extended_footer.html' %}
+
+{% include 'include/footer.html' %}
+{% include 'include/script.html' %}
+</body>
+</html>

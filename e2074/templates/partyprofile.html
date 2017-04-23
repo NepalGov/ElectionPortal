@@ -1,4 +1,47 @@
-{{ infor.name }}
-{{ infor.established }}
-{{ infor.slogan }}
-{{ infor.about }}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/head.html' %}
+  <body>
+
+    {% include 'include/navbar.html' %}
+    <div class="page-content">
+      <div class="election-grid">
+        <div class="team-member">
+          <div class="election-grid">
+            <h1>{{ infor.name | title }}</h1> <br />
+            <div class="election-width-one-third">
+              {% if infor.photo %}
+                <img src="{{ infor.photo.url}}" alt="Photo of {{ infor.name | title }}">
+              {% else %}
+                <img src="{{ infor.photo.url}}" alt="Placeholder Government of Nepal logo since {{ infor.name | title }} does not have a photo yet">
+              {% endif %}
+              <div class="role">
+                <p>{{ infor.slogan | title }}</p>
+              </div>
+
+        	  <h3>Content</h3>
+	              <ul class="election-unstyled-list">
+                  <li>Established:- {{ infor.established }}</li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+
+            </div>
+            <div class="election-width-two-thirds">
+              <h2 id="biography">About</h2>
+                <div class="bio">{{ infor.about }}</div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% include 'include/extended_footer.html' %}
+
+{% include 'include/footer.html' %}
+{% include 'include/script.html' %}
+</body>
+</html>

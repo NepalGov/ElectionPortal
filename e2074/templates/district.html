@@ -1,3 +1,20 @@
-{% for infor in infor %}{% if dis.id == infor.district.id %}
-<a href="{% url 'politicaldiv' dis.name infor.name %}">{{ infor.name }}</a>
-{% endif %}{% endfor %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/head.html' %}
+  <body>
+
+    {% include 'include/navbar.html' %}
+
+    <div class="page-content">
+      <div class="election-grid">{% for infor in infor %}{% if dis.id == infor.district.id %}
+<a href="{% url 'politicaldiv' dis.name infor.name %}">{{ infor.name | capfirst }}</a>
+{% endif %}{% endfor %}</div>
+    </div>
+
+{% include 'include/extended_footer.html' %}
+
+{% include 'include/footer.html' %}
+{% include 'include/script.html' %}
+</body>
+</html>

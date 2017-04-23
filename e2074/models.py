@@ -12,6 +12,10 @@ class Zone(models.Model):
 class District(models.Model):
     name = models.CharField(max_length=20)
     zone = models.ForeignKey(Zone)
+    vdc = models.IntegerField()
+    municipality = models.IntegerField()
+    population = models.IntegerField()
+    voters = models.IntegerField()
 
     def __str__(self):
         return self.name
