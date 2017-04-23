@@ -16,12 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from e2074.views import profile,home,signup,wpadmin,wpzone,wpdistrict,wppoliticaldiv,post,wppost
+from django.conf import settings
+from django.conf.urls.static import static
+
+from e2074.views import profile,home,signup,wpadmin,wpzone,wpdistrict,wppoliticaldiv,post,profile,explore,district,politicaldiv,parties,partyprofile,candidates,getinvolved
 from django.contrib.auth.views import login,logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^candidate/(?P<slug>[\w-]+)/$',profile, name='profile'),
     url(r'^$', home, name='home'),
     url(r'^wp-admin/login/$', login, name='login'),
     url(r'^accounts/login/$', login, name='login'),
@@ -31,8 +33,15 @@ urlpatterns = [
     url(r'^wp-admin/zone/$', wpzone, name='wpzone'),
     url(r'^wp-admin/district/$', wpdistrict, name='wpdistrict'),
     url(r'^wp-admin/politicaldiv/$', wppoliticaldiv, name='wppoliticaldiv'),
+    url(r'^parties/$', parties, name='parties'),
+    url(r'^getinvolved/$', getinvolved, name='getinvolved'),
+    url(r'^candidates/$', candidates, name='candidates'),
+    url(r'^parties/(?P<slug>[\w-]+)/$', partyprofile, name='partyprofile'),
+    url(r'^explore/$', explore, name='explore'),
+    url(r'^explore/(?P<name>[\w-]+)/$', district, name='district'),
+    url(r'^explore/(?P<name>[\w-]+)/(?P<name2>[\w-]+)/$', politicaldiv, name='politicaldiv'),
     url(r'^(?P<slug>[\w-]+)/$', post, name='post'),
-    url(r'^wp-admin/post/$', wppost, name='wppost'),
-
+    url(r'^(?P<district>[\w-]+)/(?P<politicaldiv>[\w-]+)/(?P<slug>[\w-]+)/$', profile, name='profile'),
 
 ]
+urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

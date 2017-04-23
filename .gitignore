@@ -2,5 +2,6 @@ electionenv/
 /election.sock
 /election/settings.py
 /static/
+/media/
 *.pyc
 /db.sqlite3
