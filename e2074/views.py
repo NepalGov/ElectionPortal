@@ -6,9 +6,10 @@ from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv, Party
 from .forms import FeedbackForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from .forms import FeedbackForm, WpZoneForm, WpDistrictForm, WpPoliticaldivForm
+from .forms import FeedbackForm, WpZoneForm, WpDistrictForm, WpPoliticaldivForm,WpCandidateForm
 
 from django.utils.text import slugify
+from django.http import JsonResponse #for suggestion of district on the basic of zone
 
 
 def profile(request, slug, district, politicaldiv):
@@ -140,5 +141,38 @@ def wppoliticaldiv(request):
         form = WpPoliticaldivForm()
     template_name = 'wp-admin/form.html'
     items = Politicaldiv.objects.all()
-    context = {'title':'Add Political Division','form':form,'items':items,'message':'You Should Add Required Zone and Districts Before'}
+    context = {'title':'Add Political Division','form':form,'items':items,'message':'You Should Add Required Zone and Districts First'}
     return render (request, template_name, context)
+
+def wpcandidate(request):
+    if request.method =='POST':
+        form = WpCandidateForm(request.POST, request.FILES)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.slug = slugify(form.name)
+            form.save()
+            return redirect('wpcandidate')
+    else:
+        form = WpCandidateForm()
+    template_name = 'wp-admin/form.html'
+    items = Candidate.objects.all()
+    context = {'title':'Add Candidates','form':form,'items':items,'message':'You Should Add Required Zone and Districts and VDC or Municipality First'}
+    return render (request, template_name, context)
+
+def suggestdistrict(request): #to get suggestion basic of zone
+    zone = request.GET.get("zone")
+    districts = [{"data":"nothing found"}]
+    if zone:
+        districts = District.objects.filter(zone_id=zone
+                                            ).values("pk", "name")
+        districts = list(districts)
+    return JsonResponse(districts, safe=False)
+
+def suggestpoliticaldiv(request): #to get suggestion basic of district
+    district = request.GET.get("district")
+    politicaldivs = [{"data":"nothing found"}]
+    if district:
+        politicaldivs = Politicaldiv.objects.filter(district_id=district
+                                            ).values("pk", "name")
+        politicaldivs = list(politicaldivs)
+    return JsonResponse(politicaldivs, safe=False)
