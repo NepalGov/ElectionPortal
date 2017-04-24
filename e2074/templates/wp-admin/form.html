@@ -76,7 +76,7 @@
             </div>
             {{ message }}
             <br/>
-            <form method="post">
+            <form method="post" enctype='multipart/form-data' class="election-form-large">
               {% csrf_token %}
               {{form.as_p}}
               <input type="submit" name="submit" value="Submit" title="Submit" />
