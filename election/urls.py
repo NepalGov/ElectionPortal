@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from e2074.views import profile,home,signup,wpadmin,wpzone,wpdistrict,wppoliticaldiv,post,profile,explore,district,politicaldiv,parties,partyprofile,candidates,getinvolved,suggestdistrict,suggestpoliticaldiv,wpcandidate
+from e2074.views import *
 from django.contrib.auth.views import login,logout
 
 urlpatterns = [
