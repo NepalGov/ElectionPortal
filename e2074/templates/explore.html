@@ -7,9 +7,12 @@
     {% include 'include/navbar.html' %}
 
     <div class="page-content">
-      <div class="election-grid">{% for infor in infor %}
-<a href="{% url 'district' infor.name %}">{{ infor.name | capfirst }}</a>
-{% endfor %}</div>
+      <div class="election-grid">
+      <h1>Select Your District</h1> <br />
+        <div class="election-grid">{% for infor in infor %}
+          <a href="{% url 'district' infor.name %}">{{ infor.name | capfirst }}</a>
+        {% endfor %}</div>
+      </div>
     </div>
 
 {% include 'include/extended_footer.html' %}
