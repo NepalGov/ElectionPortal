@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en"> {% include 'include/head.html' %}
+
+<body> {% include 'include/navbar.html' %}
+  <div class="page-content">
+    <br />
+    <div class="election-grid">
+      <form method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend class="election-drop_text">Sign Up</legend>{% csrf_token %} {{form.as_p}}
+          <input type="submit" value="Sign Up"> </fieldset>
+      </form>
+    </div>
+  </div>

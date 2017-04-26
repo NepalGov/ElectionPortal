@@ -8,7 +8,7 @@
     <div class="election-grid">
       <form class="election-form" method="post" enctype="multipart/form-data">
         <fieldset>
-          <legend class="election-drop_text">Sign in</legend> <span>or <a href ="{% url 'signup' %}">create an account</a></span> {% csrf_token %} {{form.as_p}}
+          <legend class="election-drop_text">Log in</legend> <span>or <a href ="{% url 'signup' %}">create an account</a></span> {% csrf_token %} {{form.as_p}}
           <p class="election-form-note"> <a title="Show password" href="javascript:void(0);" class="election-show_password" aria-controls="id_password">
     Show password</a> </p>
           <input type="submit" value="Login"> </fieldset>

@@ -83,7 +83,7 @@ def home(request):
     return render(request,template_name,context)
 
 def signup(request):
-    template_name = 'wp-admin/signup.html'
+    template_name = 'registration/signup.html'
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -93,7 +93,7 @@ def signup(request):
         pass
     else:
         form = UserCreationForm()
-    context = {'form':form}
+    context = {'form':form, 'title':'Sign Up', 'subtitle':'Election Portal'}
     return render (request, template_name, context)
 
 @login_required()
