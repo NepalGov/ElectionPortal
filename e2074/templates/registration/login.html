@@ -1,6 +1,18 @@
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/head.html' %}
+  <body>
+        {% include 'include/navbar.html' %}
+        <div class="page-content"><br />
+          <div class="election-grid">
 
-              <form method="post" enctype="multipart/form-data">{% csrf_token %}  {{form.as_p}}
+              <form class="election-form" method="post" enctype="multipart/form-data">
+<fieldset>
+  <legend class="election-drop_text">Sign in</legend>
+  <span>or <a href ="{% url 'signup' %}">create an account</a></span>
+                {% csrf_token %}  {{form.as_p}}
                 <input type="submit" value="Login">
-              </form><br/>New Member?<br/>
-              <a href ="{% url 'signup' %}"><button >Register</button></a>
+      </fieldset>
+              </form>
+</div>
+</div>
