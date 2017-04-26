@@ -1,0 +1,22 @@
+<div class="election-grid">
+  <div class="election-accordion-bordered">
+    <ul class="thdc-unstyled-list">
+      <li>
+        <button class="election-button-unstyled" aria-expanded="false" aria-controls="wrong-form">
+          Is anything wrong with this page?
+        </button>
+        <div id="wrong-form" class="election-accordion-content">
+          <div class="election-width-two-thirds improve">
+            <h2>Help us improve Election Portal</h2>
+            <p class="election-font-lead">Don’t include personal or financial information like your National Identity number or credit card details.</p>
+            <form method="post" class="election-form-large">
+              {% csrf_token %}
+              {{form.as_p}}
+              <input type="submit" class="election-button-big" id="submit" name="submit" value="Submit" title="Submit" />
+            </form>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
