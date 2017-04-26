@@ -2,6 +2,7 @@ from django import forms
 from .models import Feedback, Zone, District, Politicaldiv, Post, Candidate
 
 class FeedbackForm(forms.ModelForm):
+    field_order = ['whatyouweredoing','whathappened']
     class Meta:
         model = Feedback
         fields = {'whatyouweredoing','whathappened'}

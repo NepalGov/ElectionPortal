@@ -12,12 +12,12 @@ class Zone(models.Model):
 class District(models.Model):
     name = models.CharField(max_length=20)
     zone = models.ForeignKey(Zone)
-    vdc = models.IntegerField()
-    municipality = models.IntegerField()
-    submetropolitan = models.IntegerField()
-    metropolitan = models.IntegerField()
-    population = models.IntegerField()
-    voters = models.IntegerField()
+    vdc = models.IntegerField(verbose_name="No. of VDC")
+    municipality = models.IntegerField(verbose_name="No. of municipality")
+    submetropolitan = models.IntegerField(verbose_name="No. of sub-metropolitan")
+    metropolitan = models.IntegerField(verbose_name="No. of metropolitan")
+    population = models.IntegerField(verbose_name="Total Population")
+    voters = models.IntegerField(verbose_name="Total Voters")
 
     def __str__(self):
         return self.name
@@ -70,7 +70,7 @@ class Candidate(models.Model):
     )
     status = models.CharField(max_length=1, choices=VOTE_STATUS)
     age = models.IntegerField()
-    criminalcase = models.IntegerField()
+    criminalcase = models.IntegerField(verbose_name="No. of Criminal cases")
     photo = models.ImageField(upload_to='images/photo', null=True, blank=True)
     about = models.TextField()
 
@@ -91,13 +91,14 @@ class Post(models.Model):
     )
     home = models.CharField(max_length=1, choices=POST_LOC, default='4')
     content = models.TextField()
+    summary = models.CharField(max_length=300)
 
     def __str__(self):
         return self.title
 
 class Feedback(models.Model):
-    whatyouweredoing = models.TextField()
-    whathappened = models.TextField()
+    whatyouweredoing = models.TextField(verbose_name="What you were doing")
+    whathappened = models.TextField(verbose_name="What happended")
 
     def __str__ (self):
         return self.whathappened
