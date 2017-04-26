@@ -34,7 +34,7 @@ def district(request, name):
 def politicaldiv(request, name, name2):
     template_name = 'politicaldiv.html'
     dis = get_object_or_404(District, name=name)
-    location = get_object_or_404(Politicaldiv, name=name2)
+    location = get_object_or_404(Politicaldiv, slug=name2)
     infor = Candidate.objects.all()
     context = {'title': location.name, 'subtitle':'Election Portal','infor':infor,'dis':dis,'location':location}
     return render(request,template_name,context)
