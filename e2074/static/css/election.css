@@ -1614,7 +1614,7 @@ html {
 }
 
 body {
-  font-size: 2rem;
+  font-size: 19px;
 }
 
 p {
@@ -4164,7 +4164,6 @@ fieldset {
 
 .election-search {
   max-width: none;
-  position: relative;
 }
 
 .election-search::after {
