@@ -9,9 +9,14 @@
     <div class="page-content">
       <div class="election-grid">
         <h1>Select a Candidate</h1> <br />
-        <div class="election-grid">{% for infor in infor %}{% if dis.id == infor.district.id %}{% if location.id == infor.politicaldiv.id %}
+        <div class="election-grid team">{% for infor in infor %}{% if dis.id == infor.district.id %}{% if location.id == infor.politicaldiv.id %}
           <a href="{% url 'profile' dis.name location.name infor.slug %}">{{ infor.name | capfirst }}</a>
-        {% endif %}{% endif %}{% endfor %}</div>
+        {% endif %}{% endif %}{% endfor %}  <br />
+          <div class="election-grid">
+            <bold>Is Somebody missed?</bold>
+            <span>Add Them Here <a href="{% url 'wpcandidate' %}">Add Candidates</a></span>
+          </div>
+        </div>
       </div>
     </div>
 

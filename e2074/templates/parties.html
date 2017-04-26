@@ -8,26 +8,26 @@
 
     <div class="page-content">
       <div class="election-grid">
-        <div class="team-member">
-          <div class="election-grid">
-            <h1>Parties</h1> <br />
-            {% for infor in infor %}
-            <div class="election-grid team">
-              <div class="election-width-one-fourth">
-                <a href="{% url 'partyprofile' infor.slug %}">
-                  <img src="{{ infor.logo.url }}" alt="Photo of {{ infor.name | title }}">
-                </a>
-                <div class="team member-name">
-                  <a href="{% url 'partyprofile' infor.slug %}"><strong>{{ infor.name | title }}</strong></a>
-                </div>
-                <div class="role">
-                  <p>{{ infor.slogan | title }}</p>
-                </div>
-              </div>
+        <h1>Parties</h1> <br />
+        <div class="election-grid team">{% for infor in infor %}
+          <div class="election-width-one-fourth">
+            <a href="{% url 'partyprofile' infor.slug %}">
+              <img src="{{ infor.logo.url }}" alt="Photo of {{ infor.name | title }}">
+            </a>
+            <div class="team member-name">
+              <a href="{% url 'partyprofile' infor.slug %}"><strong>{{ infor.name | title }}</strong></a>
             </div>
-          </div>{% endfor %}
+            <div class="role">
+              <p>{{ infor.slogan | title }}</p>
+            </div>
+          </div>{% endfor %}   <br />
+          <div class="election-grid">
+            <bold>Is Something missed?</bold>
+            <span>Please Contact Us</a></span>
+          </div>
         </div>
       </div>
+
     </div>
 
 

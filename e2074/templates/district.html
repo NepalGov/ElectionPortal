@@ -9,11 +9,16 @@
     <div class="page-content">
       <div class="election-grid">
         <h1>Select You VDC or Municipality</h1> <br />
-        <div class="election-grid">{% for infor in infor %}{% if dis.id == infor.district.id %}
+        <div class="election-grid team">{% for infor in infor %}{% if dis.id == infor.district.id %}
           <a href="{% url 'politicaldiv' dis.name infor.slug %}">{{ infor.name | capfirst }}</a>
-        {% endif %}{% endfor %}</div>
+        {% endif %}{% endfor %} <br />
+          <div class="election-grid">
+            <bold>Is You VDC or Municipality missed?</bold>
+            <span>Add Them Here <a href="{% url 'wppoliticaldiv' %}">Add VDC or Municipality</a></span>
+          </div>
         </div>
       </div>
+    </div>
 
 {% include 'include/extended_footer.html' %}
 

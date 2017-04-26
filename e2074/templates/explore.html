@@ -9,9 +9,14 @@
     <div class="page-content">
       <div class="election-grid">
       <h1>Select Your District</h1> <br />
-        <div class="election-grid">{% for infor in infor %}
+        <div class="election-grid team">{% for infor in infor %}
           <a href="{% url 'district' infor.name %}">{{ infor.name | capfirst }}</a>
-        {% endfor %}</div>
+        {% endfor %} <br />
+          <div class="election-grid">
+            <bold>Is You District missed?</bold>
+            <span>Add Them Here <a href="{% url 'wpdistrict' %}">Add District</a></span>
+          </div>
+        </div>
       </div>
     </div>
 
