@@ -121,7 +121,7 @@
   </div></div>
   <div class="election-width-one-third">
     <div class="election-hero-callout election-section-dark">
-      <h2 style="text-align:center;"><span class="election-hero-callout-alt">38 Days</span> Until the Local Level Election</h2>
+      <h2 style="text-align:center;"><span class="election-hero-callout-alt" id="countdown"></span> Until the Local Level Election</h2>
       <a class="election-hero-link" href="#">Here's everything we know</a>
     </div>
   </div>
@@ -154,4 +154,16 @@
   </body>
 </html>
 <br />
+<script>
+  var countDownDate = new Date("May 14, 2017");
+  var now = new Date();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  document.getElementById("countdown").innerHTML = days + " Days";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "The Election Day";
+  }
+</script>
 {% include 'include/extended_footer.html' %}
