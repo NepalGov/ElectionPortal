@@ -88,8 +88,10 @@ class Post(models.Model):
         ('1','Home 1'),
         ('2','Home 2'),
         ('3','Home 3'),
+        ('5','Top Section'),
+        ('6','Bottom Section'),
     )
-    home = models.CharField(max_length=1, choices=POST_LOC, default='4')
+    home = models.CharField(max_length=1, choices=POST_LOC, default='4',verbose_name="Choose Post Position")
     content = models.TextField()
     summary = models.CharField(max_length=300)
 

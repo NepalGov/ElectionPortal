@@ -25,17 +25,9 @@
     </div>
     <div class="popular election-width-one-third">
       <h2>Popular on Election Portal</h2>
-      <ul class="election-unstyled-list">
-        <li><a href="/namesearch/">Check your name on voter's list</a>
-        </li>
-        <li><a href="/cast-vote/">How to cast vote?</a>
-        </li>
-        <li><a href="/parties/">Political Parties in Nepal</a>
-        </li>
-        <li><a href="/featured/">Featured Candidates</a>
-        </li>
-        <li><a href="/election-schedule/">Election Schedule</a>
-        </li>
+      <ul class="election-unstyled-list">{% for blogs in blogs %}{% if blogs.home == '5' %}
+        <li><a href="{% url 'post' blogs.slug %}">{{ blogs.title | title }}</a>
+        </li>{% endif %}{% endfor %}
       </ul>
     </div>
   </div>
@@ -100,23 +92,9 @@
   </div>
   <div class="election-width-one-third">
     <h3>Most active</h3>
-    <ul class="election-unstyled-list">
-      <li><a href="/namesearch/">Become a volunteer</a>
-      </li>
-      <li><a href="/cast-vote/">How to cast vote?</a>
-      </li>
-      <li><a href="/parties/">Political Parties in Nepal</a>
-      </li>
-      <li><a href="/featured/">Featured Candidates</a>
-      </li>
-      <li><a href="/election-schedule/">Sample Ballot Papers</a>
-      </li>
-      <li><a href="/election-schedule/">Registering a Political Party</a>
-      </li>
-      <li><a href="/election-schedule/">Financial Disclosure of Parties</a>
-      </li>
-      <li><a href="/election-schedule/">Code of Conduct</a>
-      </li>
+    <ul class="election-unstyled-list">{% for blogs in blogs %}{% if blogs.home == '6' %}
+      <li><a href="{% url 'post' blogs.slug %}">{{ blogs.title | title }}</a>
+      </li>{% endif %}{% endfor %}
     </ul>
   </div></div>
   <div class="election-width-one-third">
