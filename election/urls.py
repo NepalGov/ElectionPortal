@@ -25,10 +25,9 @@ from django.contrib.auth.views import login,logout
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
-    url(r'^wp-admin/login/$', login, name='login'),
-    url(r'^accounts/login/$', login, name='login'),
     url(r'^wp-admin/logout/$', logout, {'next_page':'home'}, name='logout'),
     url(r'^signup/$', signup, name='signup'),
+    url(r'^login/$', login, name='login'),
     url(r'^wp-admin/$', wpadmin, name='wpadmin'),
     url(r'^wp-admin/zone/$', wpzone, name='wpzone'),
     url(r'^wp-admin/district/$', wpdistrict, name='wpdistrict'),
