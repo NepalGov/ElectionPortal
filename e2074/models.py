@@ -44,13 +44,12 @@ class Party(models.Model):
     about = models.TextField()
     established = models.DateField()
     slogan = models.CharField(max_length=200)
-    logo = models.ImageField(upload_to='images')
+    logo = models.ImageField(upload_to='images/logo')
 
     def __str__(self):
         return self.name
 
 class Candidate(models.Model):
-
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True)
     party = models.ForeignKey(Party)
@@ -72,7 +71,7 @@ class Candidate(models.Model):
     status = models.CharField(max_length=1, choices=VOTE_STATUS)
     age = models.IntegerField()
     criminalcase = models.IntegerField()
-    photo = models.ImageField(upload_to='images', null=True, blank=True)
+    photo = models.ImageField(upload_to='images/photo', null=True, blank=True)
     about = models.TextField()
 
     def __str__(self):
