@@ -12,10 +12,10 @@ class WpZoneForm(forms.ModelForm):
         fields = {'name'}
 
 class WpDistrictForm(forms.ModelForm):
-    field_order = ['name','zone','vdc','municipality','population','voters']
+    field_order = ['name','zone','vdc','municipality','submetropolitan','metropolitan','population','voters']
     class Meta:
         model = District
-        fields = {'name','zone','vdc','municipality','population','voters'}
+        fields = {'name','zone','vdc','municipality','submetropolitan','metropolitan','population','voters'}
 
 class WpPoliticaldivForm(forms.ModelForm):
     field_order = ['name','zone','district','group']
