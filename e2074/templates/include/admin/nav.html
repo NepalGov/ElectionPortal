@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#">Startmin</a>
+        <a class="navbar-brand" href="{% url 'home' %}wp-admin/">Admin Dashboard</a>
     </div>
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -13,28 +13,28 @@
 
     <!-- Top Navigation: Left Menu -->
     <ul class="nav navbar-nav navbar-left navbar-top-links">
-        <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+        <li><a href="{% url 'home' %}"><i class="fa fa-home fa-fw"></i>Website</a></li>
     </ul>
 
     <!-- Top Navigation: Right Menu -->
     <ul class="nav navbar-right navbar-top-links">
         <li class="dropdown navbar-inverse">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                <i class="fa fa-bell fa-fw"></i>Alerts <b class="caret"></b>
             </a>
             <ul class="dropdown-menu dropdown-alerts">
                 <li>
                     <a href="#">
                         <div>
-                            <i class="fa fa-comment fa-fw"></i> New Comment
-                            <span class="pull-right text-muted small">4 minutes ago</span>
+                            <i class="fa fa-comment fa-fw"></i> Alerts Comming Soon ....
+                            <span class="pull-right text-muted small">Alert Time (ago)</span>
                         </div>
                     </a>
                 </li>
                 <li class="divider"></li>
                 <li>
                     <a class="text-center" href="#">
-                        <strong>See All Alerts</strong>
+                        <strong>View All Alerts</strong>
                         <i class="fa fa-angle-right"></i>
                     </a>
                 </li>
@@ -72,24 +72,51 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="{% url 'wpadmin' %}" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i>Add Data<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">Second Level Item</a>
+                            <a href="{% url 'wpcandidate' %}">Candidates</a>
                         </li>
                         <li>
-                            <a href="#">Third Level <span class="fa arrow"></span></a>
+                            <a href="{% url 'wppoliticaldiv' %}">Plotical Division</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'wpdistrict' %}">District</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'wpzone' %}">Zone</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Update<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                      <li>
+                          <a href="{% url 'wpcandidate' %}">Candidates</a>
+                      </li>
+                      <li>
+                          <a href="{% url 'wppoliticaldiv' %}">Plotical Division</a>
+                      </li>
+                      <li>
+                          <a href="{% url 'wpdistrict' %}">District</a>
+                      </li>
+                      <li>
+                          <a href="{% url 'wpzone' %}">Zone</a>
+                      </li>
+                        <li>
+                            <a href="#">Remove <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
-                                    <a href="#">Third Level Item</a>
+                                    <a href="#">Comming Soon :)</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </li>
+
             </ul>
 
         </div>

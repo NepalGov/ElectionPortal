@@ -135,6 +135,7 @@ def wppoliticaldiv(request):
         form = WpPoliticaldivForm(request.POST)
         if form.is_valid():
             form = form.save(commit=False)
+            form.slug = slugify(form.name)
             form.save()
             return redirect('wppoliticaldiv')
     else:

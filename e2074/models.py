@@ -22,11 +22,14 @@ class District(models.Model):
 
 class Politicaldiv(models.Model):
     name = models.CharField(max_length=20)
+    slug = models.SlugField(max_length=20)
     zone = models.ForeignKey(Zone)
     district = models.ForeignKey(District)
     MUNICI_VDC = (
-        ('1', 'Municipality'),
-        ('2', 'Vdc'),
+        ('1', 'Vdc'),
+        ('2', 'Municipality'),
+        ('3','Sub-Metropolitan'),
+        ('4','Metropolitan'),
     )
     group = models.CharField(max_length=1, choices=MUNICI_VDC)
 

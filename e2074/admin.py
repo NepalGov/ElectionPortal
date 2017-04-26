@@ -26,6 +26,7 @@ class DistrictAdmin(admin.ModelAdmin):
 
 class PoliticaldivAdmin(admin.ModelAdmin):
     list_display = ['id','name','zone', 'district','group']
+    prepopulated_fields = {"slug":("name",)}
 
 
 admin.site.register(Party, PartyAdmin)
