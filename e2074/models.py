@@ -14,6 +14,8 @@ class District(models.Model):
     zone = models.ForeignKey(Zone)
     vdc = models.IntegerField()
     municipality = models.IntegerField()
+    sub-metropolitan = models.IntegerField()
+    metropolitan = models.IntegerField()
     population = models.IntegerField()
     voters = models.IntegerField()
 
