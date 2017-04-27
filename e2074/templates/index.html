@@ -49,7 +49,7 @@
         <h3>
           <a href="{% url 'post' blogs.slug %}">{{ blogs.title | title }}</a>
         </h3>
-        <p class="list">{{ blogs.content | truncatechars:60 }}</p>
+        <p class="list">{{ blogs.summary }}</p>
       </li>{% endif %}{% endfor %}
     </ol>
   </div>
@@ -59,7 +59,7 @@
         <h3>
           <a href="{% url 'post' blogs.slug %}">{{ blogs.title | title }}</a>
         </h3>
-        <p class="list">{{ blogs.content | truncatechars:60 }}</p>
+        <p class="list">{{ blogs.summary }}</p>
       </li>{% endif %}{% endfor %}
     </ol>
   </div>
