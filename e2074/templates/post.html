@@ -6,12 +6,19 @@
 
     {% include 'include/navbar.html' %}
 
-    <div class="page-content">
-      <div class="election-grid"><br/>
-<div class="thdc-grid">
-  <div class="thdc-whole-page">
-    <h1 style="text-align:center;">{{ post.title | title }}</h1>
-    <p style="text-align:center;">{{ post.posted }} • {{ post.auther | title  }}</p><br/><br/>
+        <div class="page-content">
+    <br>
+    <div class="election-grid">
+      <div class="election-width-two-thirds post">
+        <p class="site-subheading">Blog</p>
+
+    <h1 id="title">{{ post.title | title }}</h1>
+    <p class="byline">{{ post.auther | title  }}, <time class="updated" datetime="{{ post.posted }}" pubdate>{{ post.posted }}</time></p>
+  </div>
+</div><br /> <br />
+<div class="election-grid">
+
+    <div class="election-width-two-thirds">
     <article>
         {{ post.content }}
     </article>
