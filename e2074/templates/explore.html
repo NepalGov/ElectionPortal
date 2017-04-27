@@ -19,10 +19,10 @@
       <form class="election-form">
 
         <select name="options" id="options">
+          <option value="" selected>Select the district to browse</option>
           {% for infor in infor %}
           <option value="{{ infor.name }}">{{ infor.name | capfirst }}</option>
           {% endfor %}
-        <option value="" selected>Select the district to browse</option>
         </select>
 
         <input type="button" value="Submit" onclick="RedirecttoDistrict()" />
