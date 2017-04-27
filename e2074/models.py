@@ -100,14 +100,14 @@ class Post(models.Model):
 
 class Feedback(models.Model):
     whatyouweredoing = models.TextField(verbose_name="What you were doing")
-    whathappened = models.TextField(verbose_name="What happended")
+    whathappened = models.TextField(verbose_name="What happened")
 
     def __str__ (self):
         return self.whathappened
 
 class Country(models.Model):
     name = models.CharField(max_length=30)
-    officialname = models.CharField(max_length=100, verbose_name="Officaial Name")
+    officialname = models.CharField(max_length=100, verbose_name="Official Name")
     population = models.IntegerField(verbose_name="Total Population")
     voters = models.IntegerField(verbose_name="Total Voters")
     mvoters = models.IntegerField(verbose_name="Total Male Voters")
