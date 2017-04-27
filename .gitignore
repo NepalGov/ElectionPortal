@@ -5,8 +5,3 @@ electionenv/
 /media/
 *.pyc
 /db.sqlite3
-/e2074/migrations/
-/election/settings.py.save
-*.gitignore
-
-
