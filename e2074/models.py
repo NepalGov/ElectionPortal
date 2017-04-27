@@ -4,13 +4,13 @@ from django.db import models
 from django.contrib.auth.models import User #To use User's name in author
 
 class Zone(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
         return self.name
 
 class District(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
     zone = models.ForeignKey(Zone)
     vdc = models.IntegerField(verbose_name="No. of VDC")
     municipality = models.IntegerField(verbose_name="No. of municipality")
@@ -24,7 +24,7 @@ class District(models.Model):
 
 class Politicaldiv(models.Model):
     name = models.CharField(max_length=20)
-    slug = models.SlugField(max_length=20)
+    slug = models.SlugField(max_length=20, unique=True)
     zone = models.ForeignKey(Zone)
     district = models.ForeignKey(District)
     MUNICI_VDC = (
@@ -39,7 +39,7 @@ class Politicaldiv(models.Model):
         return self.name
 
 class Party(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
     slug = models.SlugField(max_length=30, unique=True)
     about = models.TextField()
     established = models.DateField()
@@ -81,7 +81,7 @@ class Candidate(models.Model):
 class Post(models.Model):
     auther = models.ForeignKey(User, verbose_name="Author")
     title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
     posted = models.DateField(auto_now=True)
     POST_LOC = (
         ('4','Defult'),
@@ -115,6 +115,16 @@ class Country(models.Model):
     tgvoters = models.IntegerField(verbose_name="Total Third Gender Voters")
     area = models.IntegerField(verbose_name="Total Area")
     parties = models.IntegerField(verbose_name="Total Registered Parties")
+
+    def __str__ (self):
+        return self.name
+
+class Team(models.Model):
+    name = models.CharField(max_length=30)
+    slug = models.SlugField(max_length=30, unique=True)
+    website = models.CharField(max_length=30)
+    email = models.EmailField()
+    about = models.TextField()
 
     def __str__ (self):
         return self.name
