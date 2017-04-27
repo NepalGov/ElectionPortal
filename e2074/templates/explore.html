@@ -6,19 +6,22 @@
 
     {% include 'include/navbar.html' %}
 
-    <div class="page-content">
-      <div class="election-grid">
-      <h1>Select Your District</h1> <br />
-        <div class="election-grid team">{% for infor in infor %}
-          <a href="{% url 'district' infor.name %}">{{ infor.name | capfirst }}</a>
-        {% endfor %} <br />
-          <div class="election-grid">
-            <bold>Is You District missed?</bold>
-            <span>Add Them Here <a href="{% url 'wpdistrict' %}">Add District</a></span>
-          </div>
-        </div>
+    <br>
+    <div class="election-grid">
+      <div class="election-width-two-thirds">
+        <h1>Explore</h1>
+        <p class="election-font-lead">We are dedicated team players who bring energy, ideas and pride to their work. Each member of our team is a specialist in his or her field. Together, we make sure you'll never leave disappointed for what you have come here. </p>
       </div>
     </div>
+    <div class="election-grid">
+      <ul id="navigation">
+        {% for infor in infor %}
+        <li><a href="{% url 'district' infor.name %}">{{ infor.name | capfirst }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <br />
+    </div><br /><br />
 
 {% include 'include/extended_footer.html' %}
 
