@@ -69,11 +69,12 @@
   <div class="borderline">
   <div class="election-width-one-third">
   <div class="large-numbers">
+    {% load humanize %}<!-- For Auto comment -->
     <ol>{% for con in con %}
-      <li><a href="/government/organisations"><strong>{{ con.mvoters }}</strong> Men Voters</a></li>
-      <li><a href="/government/organisations"><strong>{{ con.fvoters }}</strong> Women Voters</a></li>
-      <li><a href="/government/organisations"><strong>{{ con.tgvoters }}</strong> Third Gender Voters</a></li>
-      <li><a href="/government/organisations"><strong>{{ con.parties }}</strong> Political Parties with Election Sign</a></li>
+      <li><a href="/government/organisations"><strong>{{ con.mvoters | intcomma }}</strong> Men Voters</a></li>
+      <li><a href="/government/organisations"><strong>{{ con.fvoters |intcomma }}</strong> Women Voters</a></li>
+      <li><a href="/government/organisations"><strong>{{ con.tgvoters |intcomma }}</strong> Third Gender Voters</a></li>
+      <li><a href="/government/organisations"><strong>{{ con.parties |intcomma }}</strong> Political Parties with Election Sign</a></li>
     </ol>{% endfor %}
   </div>
 </div>
