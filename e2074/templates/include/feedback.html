@@ -11,7 +11,7 @@
             <p class="election-font-lead">Don’t include personal or financial information like your National Identity number or credit card details.</p>
             <form method="post" class="election-form-large">
               {% csrf_token %}
-              {{form.as_p}}
+            <b>  {{form.as_p}}</b>
               <input type="submit" class="election-button-big" id="submit" name="submit" value="Submit" title="Submit" />
             </form>
           </div>

@@ -2299,13 +2299,16 @@ header#front-hero {
 
 .popular {
   background-color: #0B0C0C;
-  padding: 20px;
+  padding: 16px;
   font-size: 1.8rem; }
   .popular a {
-    color: #fff; }
+    color: #fff;}
   .popular h2 {
     font-size: 16px; }
   @media only screen and (max-width: 720px) {
+    .popular a {
+      color: #fff;
+      font-weight: bold;}
     .popular {
       padding-left: 0px;
       background-color: #005EA5;
