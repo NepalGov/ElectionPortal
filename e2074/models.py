@@ -22,6 +22,9 @@ class District(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 class Politicaldiv(models.Model):
     name = models.CharField(max_length=20)
     slug = models.SlugField(max_length=20, unique=True)
@@ -38,6 +41,9 @@ class Politicaldiv(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 class Party(models.Model):
     name = models.CharField(max_length=30, unique=True)
     slug = models.SlugField(max_length=30, unique=True)
@@ -48,6 +54,9 @@ class Party(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['name']
 
 class Candidate(models.Model):
     name = models.CharField(max_length=50)
@@ -77,6 +86,9 @@ class Candidate(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 
 class Post(models.Model):
     auther = models.ForeignKey(User, verbose_name="Author")
@@ -97,6 +109,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Feedback(models.Model):
     whatyouweredoing = models.TextField(verbose_name="What you were doing")
@@ -128,3 +141,6 @@ class Team(models.Model):
 
     def __str__ (self):
         return self.name
+
+    class Meta:
+        ordering = ['name']
