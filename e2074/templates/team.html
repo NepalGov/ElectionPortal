@@ -1,0 +1,3 @@
+{% for infor in infor %}
+  <li><a href="{% url 'teamprofile' infor.slug %}">{{ infor.name | title }}</a>
+  </li>{% endfor %}
