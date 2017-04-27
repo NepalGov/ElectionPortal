@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404, redirect
 
 # Create your views here.
 
-from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv, Party, Country
+from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv, Party, Country, Team
 from .forms import FeedbackForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -178,3 +178,15 @@ def suggestpoliticaldiv(request): #to get suggestion basic of district
                                             ).values("pk", "name")
         politicaldivs = list(politicaldivs)
     return JsonResponse(politicaldivs, safe=False)
+
+def team(request):
+    template_name = 'team.html'
+    infor = Team.objects.all()
+    context = {'title': 'Our Team', 'subtitle':'Election Portal','infor':infor}
+    return render(request,template_name,context)
+
+def teamprofile(request, slug):
+    template_name = 'teamprofile.html'
+    infor = get_object_or_404(Team, slug=slug)
+    context = {'title': infor.name, 'subtitle':'Election Portal','infor':infor}
+    return render(request,template_name,context)
