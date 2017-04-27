@@ -2,30 +2,51 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include 'include/head.html' %}
-  <body>
 
-    {% include 'include/navbar.html' %}
+<body>
 
-    <br>
-    <div class="election-grid">
-      <div class="election-width-two-thirds">
-        <h1>Explore</h1>
-        <p class="election-font-lead">We are dedicated team players who bring energy, ideas and pride to their work. Each member of our team is a specialist in his or her field. Together, we make sure you'll never leave disappointed for what you have come here. </p>
-      </div>
+  {% include 'include/navbar.html' %}
+
+  <br>
+  <div class="election-grid">
+    <div class="election-width-two-thirds">
+      <h1>Explore</h1>
+      <p class="election-font-lead">We are dedicated team players who bring energy, ideas and pride to their work. Each member of our team is a specialist in his or her field. Together, we make sure you'll never leave disappointed for what you have come here. </p>
     </div>
-    <div class="election-grid">
-      <ul id="navigation">
-        {% for infor in infor %}
-        <li><a href="{% url 'district' infor.name %}">{{ infor.name | capfirst }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-      <br />
-    </div><br /><br />
+  </div>
+  <div class="election-grid">
+    <div class="election-width-two-thirds">
+      <form class="election-form">
+        <select name="options" id="options">
+          {% for infor in infor %}
+          <option value="{{ infor.name | capfirst }}">{{ infor.name | capfirst }}</option>
+          {% endfor %}
+        </select>
 
-{% include 'include/extended_footer.html' %}
+        <input type="button" value="Submit" onclick="RedirecttoDistrict()" />
 
-{% include 'include/footer.html' %}
-{% include 'include/script.html' %}
+        <script>
+          function RedirecttoDistrict() {
+            var hold = document.getElementById("options");
+            var selectedVal = hold.options[hold.selectedIndex].value;
+
+            window.location = selectedVal;
+          }
+        </script>
+      </form>
+    </div>
+  </div>
+  <div class="election-grid">
+    <ul id="navigation">
+      {% for infor in infor %}
+      <li><a href="{% url 'district' infor.name %}">{{ infor.name | capfirst }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <br />
+  </div>
+  <br />
+  <br /> {% include 'include/extended_footer.html' %} {% include 'include/footer.html' %} {% include 'include/script.html' %}
 </body>
+
 </html>
