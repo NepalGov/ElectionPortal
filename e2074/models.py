@@ -79,7 +79,7 @@ class Candidate(models.Model):
 
 
 class Post(models.Model):
-    auther = models.ForeignKey(User)
+    auther = models.ForeignKey(User, verbose_name="Author")
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     posted = models.DateField(auto_now=True)
@@ -104,3 +104,16 @@ class Feedback(models.Model):
 
     def __str__ (self):
         return self.whathappened
+
+class Country(models.Model):
+    name = models.CharField(max_length=30)
+    officialname = models.CharField(max_length=100)
+    population = models.IntegerField()
+    voters = models.IntegerField()
+    mvoters = models.IntegerField()
+    fvoters = models.IntegerField()
+    tgvoters = models.IntegerField()
+    area = models.IntegerField()
+
+    def __str__ (self):
+        return self.name
