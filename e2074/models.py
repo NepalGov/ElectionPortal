@@ -107,13 +107,13 @@ class Feedback(models.Model):
 
 class Country(models.Model):
     name = models.CharField(max_length=30)
-    officialname = models.CharField(max_length=100)
-    population = models.IntegerField()
-    voters = models.IntegerField()
-    mvoters = models.IntegerField()
-    fvoters = models.IntegerField()
-    tgvoters = models.IntegerField()
-    area = models.IntegerField()
+    officialname = models.CharField(max_length=100, verbose_name="Officaial Name")
+    population = models.IntegerField(verbose_name="Total Population")
+    voters = models.IntegerField(verbose_name="Total Voters")
+    mvoters = models.IntegerField(verbose_name="Total Male Voters")
+    fvoters = models.IntegerField(verbose_name="Total Female Voters")
+    tgvoters = models.IntegerField(verbose_name="Total Third Gender Voters")
+    area = models.IntegerField(verbose_name="Total Area")
 
     def __str__ (self):
         return self.name

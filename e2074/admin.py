@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Party,Candidate,Post,Feedback,Zone,District,Politicaldiv
+from .models import Party,Candidate,Post,Feedback,Zone,District,Politicaldiv,Country
 
 class CandidateAdmin(admin.ModelAdmin):
     list_display=("id","name", "party","criminalcase")
@@ -28,6 +28,9 @@ class PoliticaldivAdmin(admin.ModelAdmin):
     list_display = ['id','name','zone', 'district','group']
     prepopulated_fields = {"slug":("name",)}
 
+class CountryAdmin(admin.ModelAdmin):
+    list_display = ['id','name']
+
 
 admin.site.register(Party, PartyAdmin)
 admin.site.register(Candidate, CandidateAdmin)
@@ -36,3 +39,4 @@ admin.site.register(Feedback, FeedbackAdmin)
 admin.site.register(Zone, ZoneAdmin)
 admin.site.register(District, DistrictAdmin)
 admin.site.register(Politicaldiv, PoliticaldivAdmin)
+admin.site.register(Country, CountryAdmin)
