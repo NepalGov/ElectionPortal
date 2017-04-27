@@ -69,12 +69,12 @@
   <div class="borderline">
   <div class="election-width-one-third">
   <div class="large-numbers">
-    <ol>
-      <li><a href="/government/organisations"><strong>7,069,714</strong> Men Voters</a></li>
-      <li><a href="/government/organisations"><strong>6,984,625</strong> Women Voters</a></li>
-      <li><a href="/government/organisations"><strong>143</strong> Third Gender Voters</a></li>
-      <li><a href="/government/organisations"><strong>28</strong> Political Parties with Election Sign</a></li>
-    </ol>
+    <ol>{% for con in con %}
+      <li><a href="/government/organisations"><strong>{{ con.mvoters }}</strong> Men Voters</a></li>
+      <li><a href="/government/organisations"><strong>{{ con.fvoters }}</strong> Women Voters</a></li>
+      <li><a href="/government/organisations"><strong>{{ con.tgvoters }}</strong> Third Gender Voters</a></li>
+      <li><a href="/government/organisations"><strong>{{ con.parties }}</strong> Political Parties with Election Sign</a></li>
+    </ol>{% endfor %}
   </div>
 </div>
 <div class="election-width-two-thirds">

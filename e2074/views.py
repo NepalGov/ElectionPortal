@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404, redirect
 
 # Create your views here.
 
-from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv, Party
+from .models import Candidate,Post,Feedback,Zone,District,Politicaldiv, Party, Country
 from .forms import FeedbackForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -79,7 +79,8 @@ def home(request):
         form = FeedbackForm()
     template_name = 'index.html'
     blogs = Post.objects.all()
-    context = {'title':'Election Portal', 'subtitle':'Discover everything election!', 'blogs':blogs,'form':form}
+    con = Country.objects.all()
+    context = {'title':'Election Portal', 'subtitle':'Discover everything election!', 'blogs':blogs,'form':form, 'con':con}
     return render(request,template_name,context)
 
 def signup(request):

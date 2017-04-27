@@ -114,6 +114,7 @@ class Country(models.Model):
     fvoters = models.IntegerField(verbose_name="Total Female Voters")
     tgvoters = models.IntegerField(verbose_name="Total Third Gender Voters")
     area = models.IntegerField(verbose_name="Total Area")
+    parties = models.IntegerField(verbose_name="Total Registered Parties")
 
     def __str__ (self):
         return self.name
