@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User #To use User's name in author
 
 from markdownx.models import MarkdownxField #Mardwown
+from django.core.urlresolvers import reverse #sitemaps return url
 
 class Zone(models.Model):
     name = models.CharField(max_length=20, unique=True)
@@ -60,6 +61,10 @@ class Party(models.Model):
     class Meta:
         ordering = ['name']
 
+    def get_absolute_url(self):
+        return reverse('partyprofile', kwargs={'slug': self.slug})
+
+
 class Candidate(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True)
@@ -111,6 +116,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('post', kwargs={'slug': self.slug})
 
 
 class Feedback(models.Model):
