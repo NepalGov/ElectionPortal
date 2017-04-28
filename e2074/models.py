@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 from django.contrib.auth.models import User #To use User's name in author
 
+from markdownx.models import MarkdownxField #Mardwown
+
 class Zone(models.Model):
     name = models.CharField(max_length=20, unique=True)
 
@@ -47,7 +49,7 @@ class Politicaldiv(models.Model):
 class Party(models.Model):
     name = models.CharField(max_length=30, unique=True)
     slug = models.SlugField(max_length=30, unique=True)
-    about = models.TextField()
+    about = MarkdownxField()
     established = models.DateField()
     slogan = models.CharField(max_length=200)
     logo = models.ImageField(upload_to='images/logo')
@@ -81,7 +83,7 @@ class Candidate(models.Model):
     age = models.IntegerField()
     criminalcase = models.IntegerField(verbose_name="No. of Criminal cases")
     photo = models.ImageField(upload_to='images/photo', null=True, blank=True)
-    about = models.TextField()
+    about = MarkdownxField()
 
     def __str__(self):
         return self.name
@@ -104,7 +106,7 @@ class Post(models.Model):
         ('6','Bottom Section'),
     )
     home = models.CharField(max_length=1, choices=POST_LOC, default='4',verbose_name="Choose Post Position")
-    content = models.TextField()
+    content = MarkdownxField()
     summary = models.CharField(max_length=300)
 
     def __str__(self):
@@ -137,7 +139,7 @@ class Team(models.Model):
     slug = models.SlugField(max_length=30, unique=True)
     website = models.CharField(max_length=30)
     email = models.EmailField()
-    about = models.TextField()
+    about = MarkdownxField()
 
     def __str__ (self):
         return self.name

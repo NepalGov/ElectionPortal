@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from django.conf import settings
@@ -22,10 +22,13 @@ from django.conf.urls.static import static
 from e2074.views import *
 from django.contrib.auth.views import login,logout
 
+# from markdownx import urls as markdownx
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^wp-admin/logout/$', logout, name='logout'),
+    url(r'^markdownx/', include('markdownx.urls')),
     url(r'^signup/$', signup, name='signup'),
     url(r'^login/$', login, {'extra_context':{'title': 'Log In','subtitle':'Election Portal'}}, name='login'),
     url(r'^team/$', team, name='team'),

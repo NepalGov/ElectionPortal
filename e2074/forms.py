@@ -1,6 +1,8 @@
 from django import forms
 from .models import Feedback, Zone, District, Politicaldiv, Post, Candidate
 
+from markdownx.fields import MarkdownxFormField
+
 class FeedbackForm(forms.ModelForm):
     field_order = ['whatyouweredoing','whathappened']
     class Meta:
@@ -25,6 +27,7 @@ class WpPoliticaldivForm(forms.ModelForm):
         fields = {'zone','district','name','group'}
 
 class WpCandidateForm(forms.ModelForm):
+    about = MarkdownxFormField()
     field_order = ['name','party','zone','district','politicaldiv','gender','votes','status','age','criminalcase','photo','about']
     class Meta:
         model = Candidate
