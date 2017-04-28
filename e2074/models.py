@@ -28,8 +28,8 @@ class District(models.Model):
         ordering = ['name']
 
 class Politicaldiv(models.Model):
-    name = models.CharField(max_length=20)
-    slug = models.SlugField(max_length=20, unique=True)
+    name = models.CharField(max_length=40)
+    slug = models.SlugField(max_length=40, unique=True)
     zone = models.ForeignKey(Zone)
     district = models.ForeignKey(District)
     MUNICI_VDC = (
@@ -47,8 +47,8 @@ class Politicaldiv(models.Model):
         ordering = ['name']
 
 class Party(models.Model):
-    name = models.CharField(max_length=30, unique=True)
-    slug = models.SlugField(max_length=30, unique=True)
+    name = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
     about = MarkdownxField()
     established = models.DateField()
     slogan = models.CharField(max_length=200)
