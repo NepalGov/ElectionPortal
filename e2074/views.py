@@ -17,6 +17,7 @@ from markdownx.utils import markdownify
 def profile(request, slug, district, politicaldiv):
     template_name = 'profile.html'
     infor = get_object_or_404(Candidate, slug=slug, district__name=district, politicaldiv__name=politicaldiv)
+    infor.about = markdownify(infor.about)
     context = {'title': infor.name, 'subtitle':'Election Portal','infor':infor}
     return render(request,template_name,context)
 
@@ -61,13 +62,14 @@ def getinvolved(request):
 def partyprofile(request, slug):
     template_name = 'partyprofile.html'
     infor = get_object_or_404(Party, slug=slug)
+    infor.about = markdownify(infor.about)
     context = {'title': infor.name, 'subtitle':'Election Portal','infor':infor}
     return render(request,template_name,context)
 
 def post(request, slug):
     template_name = 'post.html'
     post = get_object_or_404(Post, slug=slug)
-    post.content = markdownify(post.content)    
+    post.content = markdownify(post.content)
     context = {'title': post.title, 'subtitle':'Election Portal','post':post}
     return render(request,template_name,context)
 
@@ -191,5 +193,6 @@ def team(request):
 def teamprofile(request, slug):
     template_name = 'teamprofile.html'
     infor = get_object_or_404(Team, slug=slug)
+    infor.about = markdownify(infor.about)
     context = {'title': infor.name, 'subtitle':'Election Portal','infor':infor}
     return render(request,template_name,context)

@@ -61,7 +61,7 @@ class Party(models.Model):
     class Meta:
         ordering = ['name']
 
-    def get_absolute_url(self):
+    def get_absolute_url(self): #For Sitemap
         return reverse('partyprofile', kwargs={'slug': self.slug})
 
 
@@ -117,7 +117,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
+    def get_absolute_url(self): #For Sitemap
         return reverse('post', kwargs={'slug': self.slug})
 
 
