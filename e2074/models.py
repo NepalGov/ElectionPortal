@@ -84,7 +84,7 @@ class Candidate(models.Model):
         ('3','Ward President'),
         ('4','Member'),
     )
-    position = models.CharField(max_length=1, choices=POST_LOC, default='4')
+    position = models.CharField(max_length=1, choices=POSITION, default='4')
     votes = models.CharField(max_length=10)
     VOTE_STATUS = (
         ('W','Won'),
