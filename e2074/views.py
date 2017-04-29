@@ -11,6 +11,8 @@ from .forms import FeedbackForm, WpZoneForm, WpDistrictForm, WpPoliticaldivForm,
 from django.utils.text import slugify
 from django.http import JsonResponse #for suggestion of district on the basic of zone
 
+from markdownx.utils import markdownify
+
 
 def profile(request, slug, district, politicaldiv):
     template_name = 'profile.html'
@@ -65,6 +67,7 @@ def partyprofile(request, slug):
 def post(request, slug):
     template_name = 'post.html'
     post = get_object_or_404(Post, slug=slug)
+    post.content = markdownify(post.content)    
     context = {'title': post.title, 'subtitle':'Election Portal','post':post}
     return render(request,template_name,context)
 
