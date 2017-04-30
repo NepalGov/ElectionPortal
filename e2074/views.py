@@ -120,7 +120,7 @@ def wpzone(request):
         form = WpZoneForm()
     template_name = 'wp-admin/form.html'
     items = Zone.objects.all()
-    context = {'title':'Add Zones','form':form,'items':items}
+    context = {'title':'Add Zones','form':form,'items':items,'message':'14/14 Zones are Already Added Thanks for your interest:)'}
     return render (request, template_name, context)
 
 def wpdistrict(request):
@@ -135,7 +135,7 @@ def wpdistrict(request):
         form = WpDistrictForm()
     template_name = 'wp-admin/form.html'
     items = District.objects.all()
-    context = {'title':'Add Districts','form':form,'items':items,'message':'You Should Add Required Zone Before'}
+    context = {'title':'Add Districts','form':form,'items':items,'message':'75/75 Districts are Already Added Thanks for your interest:)'}
     return render (request, template_name, context)
 
 def wppoliticaldiv(request):
@@ -150,7 +150,7 @@ def wppoliticaldiv(request):
         form = WpPoliticaldivForm()
     template_name = 'wp-admin/form.html'
     items = Politicaldiv.objects.all()
-    context = {'title':'Add Political Division','form':form,'items':items,'message':'You Should Add Required Zone and Districts First'}
+    context = {'title':'Add Political Division','form':form,'items':items,'message':'Here Poltical Division Means Your VDC(GauPalika) or metropolitan/submetropolitan/municipality(NagarPalika) '}
     return render (request, template_name, context)
 
 def wpcandidate(request):
@@ -165,7 +165,7 @@ def wpcandidate(request):
         form = WpCandidateForm()
     template_name = 'wp-admin/form.html'
     items = Candidate.objects.all()
-    context = {'title':'Add Candidates','form':form,'items':items,'message':'You Should Add Required Zone and Districts and VDC or Municipality First'}
+    context = {'title':'Add Candidates','form':form,'items':items,'message':'You Should Add Required VDC(GauPalika) or metropolitan/submetropolitan/municipality(NagarPalika) First'}
     return render (request, template_name, context)
 
 def suggestdistrict(request): #to get suggestion basic of zone
