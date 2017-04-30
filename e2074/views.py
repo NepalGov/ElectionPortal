@@ -16,7 +16,7 @@ from markdownx.utils import markdownify
 
 def profile(request, slug, district, politicaldiv):
     template_name = 'profile.html'
-    infor = get_object_or_404(Candidate, slug=slug, district__slug=district, politicaldiv__name=politicaldiv)
+    infor = get_object_or_404(Candidate, slug=slug, district__name=district, politicaldiv__slug=politicaldiv)
     infor.about = markdownify(infor.about)
     context = {'title': infor.name, 'subtitle':'Election Portal','infor':infor}
     return render(request,template_name,context)
