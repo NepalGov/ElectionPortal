@@ -10,7 +10,7 @@
       <div class="election-grid">
         <h1>Select a Candidate</h1> <br />
         <div class="election-grid team">{% for infor in infor %}{% if dis.id == infor.district.id %}{% if location.id == infor.politicaldiv.id %}
-          <a href="{% url 'profile' dis.name location.name infor.slug %}">{{ infor.name | capfirst }}</a>
+          <a href="{% url 'profile' dis.name location.slug infor.slug %}">{{ infor.name | capfirst }}</a>
         {% endif %}{% endif %}{% endfor %}  <br />
           <div class="election-grid">
             <bold>Is Somebody missed?</bold>
