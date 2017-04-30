@@ -113,7 +113,8 @@ def wpzone(request):
         form = WpZoneForm(request.POST)
         if form.is_valid():
             form = form.save(commit=False)
-            form.save()
+            #form.save()
+            #Uncomment this Line to Add Zones
             return redirect('wpzone')
     else:
         form = WpZoneForm()
@@ -127,7 +128,8 @@ def wpdistrict(request):
         form = WpDistrictForm(request.POST)
         if form.is_valid():
             form = form.save(commit=False)
-            form.save()
+            #form.save()
+            #Uncomment this Line to Add Districts
             return redirect('wpdistrict')
     else:
         form = WpDistrictForm()
