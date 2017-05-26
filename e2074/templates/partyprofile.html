@@ -33,15 +33,15 @@
             </div>
             <div class="election-width-two-thirds">
               <h2 id="biography">About</h2>
-                <div class="bio">{{ infor.about }}</div>
+                <div class="bio">{{ infor.about|safe }}</div>
               </div>
           </div>
         </div>
       </div>
     </div>
-{% include 'include/extended_footer.html' %}
-
-{% include 'include/footer.html' %}
-{% include 'include/script.html' %}
+    <br />
+    {% include 'include/extended_footer.html' %}
+  	{% include 'include/footer.html' %}
+  	{% include 'include/script.html' %}
 </body>
 </html>

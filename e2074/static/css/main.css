@@ -2479,7 +2479,14 @@ a[id]:not([href]) {
       margin :10px 0px;
       float:left;
   }
-
-footer {
-  color: white;
-  padding: 1em 0; }
+  
+footer { text-align: left; background-color: #dee0e2; padding: 60px 0 10px 0; }
+footer .gov-logo { padding: 20px 0; border-top: 1px solid #bbb; }
+footer .gov-logo a { display: block; width: 100px; margin: auto; }
+footer .gov-logo a img { width: 100px; height: 100px; }
+footer h3 { margin-top: 0; font-family: "nta", Arial, sans-serif; }
+footer h3, footer .fa { color: #112e51; }
+footer .fa { margin-right: 1rem; }
+footer ul { margin: 0; list-style:none; padding: 10px;}
+footer ul li:before { content: none; }
+footer ul li:after { content: ""; margin-bottom: 1em; }

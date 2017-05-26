@@ -10,7 +10,7 @@
       <div class="election-grid">
         <h1>Select a Candidate</h1> <br />
       <div class="election-grid team">{% for infor in infor %}
-        <a href="{% url 'profile' infor.district infor.politicaldiv infor.slug %}">{{ infor.name | capfirst }}</a>
+        <a href="{% url 'profile' infor.district infor.politicaldiv.slug infor.slug %}">{{ infor.name | capfirst }}</a>
       {% endfor %} <br />
         <div class="election-grid">
           <bold>Is Somebody missed?</bold>
@@ -19,10 +19,9 @@
       </div>
     </div>
   </div>
-
-{% include 'include/extended_footer.html' %}
-
-{% include 'include/footer.html' %}
-{% include 'include/script.html' %}
+  <br />
+  {% include 'include/extended_footer.html' %}
+	{% include 'include/footer.html' %}
+	{% include 'include/script.html' %}
 </body>
 </html>

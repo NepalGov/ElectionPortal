@@ -21,14 +21,20 @@ from django.conf.urls.static import static
 
 from e2074.views import *
 from django.contrib.auth.views import login,logout
+from django.contrib.sitemaps.views import sitemap
+from sitemap import PostSitemap, PartySitemap
+sitemaps = {
+    'jobs': PostSitemap,
+    'work': PartySitemap,
+}
 
-# from markdownx import urls as markdownx
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^wp-admin/logout/$', logout, name='logout'),
     url(r'^markdownx/', include('markdownx.urls')),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}),
     url(r'^signup/$', signup, name='signup'),
     url(r'^login/$', login, {'extra_context':{'title': 'Log In','subtitle':'Election Portal'}}, name='login'),
     url(r'^team/$', team, name='team'),

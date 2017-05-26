@@ -28,7 +28,7 @@ class WpPoliticaldivForm(forms.ModelForm):
 
 class WpCandidateForm(forms.ModelForm):
     about = MarkdownxFormField()
-    field_order = ['name','party','zone','district','politicaldiv','gender','votes','status','age','criminalcase','photo','about']
+    field_order = ['name','party','zone','district','politicaldiv','position','gender','votes','status','age','criminalcase','photo','about']
     class Meta:
         model = Candidate
-        fields = {'name','party','zone','district','politicaldiv','gender','votes','status','age','criminalcase','photo','about'}
+        fields = {'name','party','zone','district','politicaldiv','position','gender','votes','status','age','criminalcase','photo','about'}
