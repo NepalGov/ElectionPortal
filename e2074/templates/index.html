@@ -110,16 +110,18 @@
 	{% include 'include/footer.html' %}
 	{% include 'include/script.html' %}
   <script>
-    var countDownDate = new Date("June 14, 2017");
+    var countDownDate = new Date("November 26, 2017");
     var now = new Date();
     var distance = countDownDate - now;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    document.getElementById("countdown").innerHTML = days + " days";
-    if (days = 0) {
+    if (days == 0) {
       clearInterval(countdown);
       document.getElementById("countdown").innerHTML = "The Election Day";
     }
+    else if (days > 0) {
+          document.getElementById("countdown").innerHTML = days + " days for";
+    } 
     else {
       document.getElementById("countdown").innerHTML = "Results of";
     }
